@@ -883,8 +883,8 @@ xkb_symbols "altgr-intl" {
    key <AC02> { [	   s,          S,        ssharp,          section, U1D460, U02E2] };
    key <AD05> { [	   t,          T,         thorn,            THORN, U1D461, U1D57 ] };
    key <AD07> { [	   u,          U,        uacute,           Uacute, U1D462, U1D58] };
-   // Weiwu alpha should be a short-hand of Greek_alpha; U251 is Latin alpha
-   key <AB04> { [	   v,          V,         alpha,             U251, U1D463, U1D5B ] };
+   // Weiwu:  U251 is Latin alpha. Greek_ALPHA fell into disuse since it look like "A"
+   key <AB04> { [	   v,          V,   Greek_alpha,             U251, U1D463, U1D5B ] };
    key <AD02> { [	   w,          W,         aring,            Aring, U1D464, U02B7 ] };
    key <AB02> { [	   x,          X,      Greek_xi,         Greek_XI, U1D465, U02E3 ] };
    key <AD06> { [	   y,          Y,    udiaeresis,       Udiaeresis, U1D466, U02B8 ] };
