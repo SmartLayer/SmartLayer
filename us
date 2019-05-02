@@ -842,22 +842,6 @@ xkb_symbols "altgr-intl" {
 
 // diversions from the MS Intl keyboard:
 
-
-   key <AE01> { [	   1,     exclam,    exclamdown,      onesuperior, onesubscript, onesuperior ] };
-   key <AE02> { [	   2,         at,   twosuperior, dead_doubleacute, twosubscript, twosuperior ] };
-   key <AE03> { [	   3, numbersign,         U2116,      dead_macron, threesubscript, threesuperior ] };
-   // Weiwu: was: key <AE04> { [	   4,     dollar,      currency,         sterling] };
-   key <AE04> { [          4,     dollar,     Thai_baht,         sterling, foursubscript, foursuperior] };
-   key <AE05> { [	   5,    percent,      EuroSign,     dead_cedilla, fivesubscript, fivesuperior ] };
-   key <AE06> { [    6, dead_circumflex,    onequarter,      asciicircum, sixsubscript, sixsuperior] };
-   key <AE07> { [	   7,  ampersand,       onehalf,	dead_horn, sevensubscript, sevensuperior ] };
-   key <AE08> { [	   8,   asterisk, threequarters,      dead_ogonek, eightsubscript, eightsuperior ] };
-   key <AE09> { [	   9,  parenleft, leftsinglequotemark, dead_breve, ninesubscript, ninesuperior ] };
-   key <AE10> { [	   0, parenright, rightsinglequotemark, dead_abovering, zerosubscript, zerosuperior ] };
-   // Weiwu: was: key <AE11> { [ minus,  underscore,       U207B,     dead_belowdot  ] };
-   key <AE11> { [     minus, underscore,           yen,    dead_belowdot, U208B, U207B ] };
-   key <AE12> { [     equal,       plus,      multiply,         division, U208C, U207C ] };
-
    key <AD11> { [ bracketleft,  braceleft,  guillemotleft, leftdoublequotemark, U208D, U207D ] };
    key <AD12> { [bracketright, braceright, guillemotright, rightdoublequotemark, U208E, U207E ] };
 
@@ -891,7 +875,7 @@ xkb_symbols "altgr-intl" {
    key <AB01> { [	   z,          Z,            ae,               AE, U1D467, U1DBB ] };
    key <AC10> { [ semicolon,      colon,     paragraph,           degree ] };
    key <AB08> { [     comma,       less,      ccedilla,         Ccedilla ] };
-   key <AB09> { [    period,    greater, dead_abovedot,       dead_caron ] };
+   key <AB09> { [    period,    greater, dead_abovedot,       dead_caron, periodcentered, ellipsis ] };
    // Weiwu: was: key <AB10> { [     slash,   question,  questiondown,        dead_hook, ] };
    // U2215: the division slash; U2044: the fraction slash
    key <AB10> { [     slash,   question,  questiondown,        dead_hook, U2215, U2044] };
@@ -904,6 +888,22 @@ xkb_symbols "altgr-intl" {
    key <AE06> { [        6, asciicircum, dead_circumflex, onequarter    ] };
    key <AE07> { [        7, ampersand,   dead_horn,       onehalf       ] };
    key <AE08> { [        8, asterisk,    dead_ogonek,     threequarters ] };
+
+   key <AE01> { [1,     exclam,    exclamdown,      onesuperior, onesubscript, onesuperior ] };
+   key <AE02> { [2,         at,   twosuperior, dead_doubleacute, twosubscript, twosuperior ] };
+   key <AE03> { [3, numbersign,         U2116,      dead_macron, threesubscript, threesuperior ] };
+   // Weiwu: was: key <AE04> { [	   4,     dollar,      currency,         sterling] };
+   key <AE04> { [4,     dollar,     Thai_baht,         sterling, foursubscript, foursuperior] };
+   key <AE05> { [5,    percent,      EuroSign,     dead_cedilla, fivesubscript, fivesuperior ] };
+   key <AE06> { [6, asciicircum, dead_circumflex, onequarter,    sixsubscript, sixsuperior ] };
+   key <AE07> { [7,  ampersand,  dead_horn,       onehalf,       sevensubscript, sevensuperior ] };
+   key <AE08> { [8, asterisk,    dead_ogonek,     threequarters, eightsubscript, eightsuperior ] };
+   key <AE09> { [9,  parenleft, leftsinglequotemark, dead_breve, ninesubscript, U207D] };
+   key <AE10> { [0, parenright, rightsinglequotemark, dead_abovering, zerosubscript, U207E] };
+   // Weiwu: was: key <AE11> { [ minus,  underscore,       U207B,     dead_belowdot  ] };
+   key <AE11> { [     minus, underscore,           yen,    dead_belowdot, U208B, U207B ] };
+   key <AE12> { [     equal,       plus,      multiply,         division, U208C, U207A ] };
+
 
    include "level3(ralt_switch)"
    include "level5(lwin_switch_lock)"
