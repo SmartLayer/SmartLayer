@@ -7,7 +7,7 @@ keyboard with AltGr dead keys layout. It's modified from the
 The major changes are:
 
 - Replacing 'currency' symbol with Thai_baht symbol which is used for
-  Bitcoin.
+  Bitcoin. Similarly, adding Ξ for Ether (currency of Ethereum).
 
 - Adding a <super> key level for every letter in English alphabet
   which produces an Italic variant in Unicode, often used in
@@ -15,17 +15,13 @@ The major changes are:
 
 - Adding <super> key level for every digit which produces a subscript digit.
 
-
-
-- Adding <shift> + <super> level for every digit which produces a
-  superscript digit.
+- Adding <shift> + <super> level for superscript numbers and superscript 
+  arithmetic operators.
 
 - Adding <shift> + <super> level for every letter in English alphabet
   which produces a superscript letter if there exists one.
 
-
 - Adding division slash and fraction slash.
-
 
 - Adding the first 4 of the traditional order oef note symbols in
   English:
