@@ -880,8 +880,9 @@ xkb_symbols "altgr-intl" {
    // U2215: the division slash; U2044: the fraction slash
    key <AB10> { [     slash,   question,  questiondown,        dead_hook, U2215, U2044] };
    // Weiwu: was: key <BKSL> { [ backslash,        bar,       notsign,        brokenbar ] };
-   key <BKSL> { [ backslash, bar, dagger, doubledagger, section, doublebar] };
-   key <LSGT> { [ backslash, bar, dagger, doubledagger, section, doublebar] };
+   // U2116 is the numero sign
+   key <BKSL> { [ backslash, bar, dagger, doubledagger, section,  U2116] };
+   key <LSGT> { [ backslash, bar, dagger, doubledagger, section,  U2116] };
 
 // onequarter etc (not in iso8859-15) moved to get three unshifted deadkeys:
 
@@ -889,17 +890,17 @@ xkb_symbols "altgr-intl" {
    key <AE07> { [        7, ampersand,   dead_horn,       onehalf       ] };
    key <AE08> { [        8, asterisk,    dead_ogonek,     threequarters ] };
 
-   key <AE01> { [1,     exclam,    exclamdown,      onesuperior, onesubscript, onesuperior ] };
-   key <AE02> { [2,         at,   twosuperior, dead_doubleacute, twosubscript, twosuperior ] };
-   key <AE03> { [3, numbersign,         U2116,      dead_macron, threesubscript, threesuperior ] };
+   key <AE01> { [1,     exclam,    exclamdown,      onesuperior, onesubscript, U207D] };
+   key <AE02> { [2,         at,   dead_doubleacute, twosuperior, twosubscript, U207E] };
+   key <AE03> { [3, numbersign,     dead_macron,  threesuperior, threesubscript, threesuperior ] };
    // Weiwu: was: key <AE04> { [	   4,     dollar,      currency,         sterling] };
    key <AE04> { [4,     dollar,     Thai_baht,         sterling, foursubscript, foursuperior] };
    key <AE05> { [5,    percent,      EuroSign,     dead_cedilla, fivesubscript, fivesuperior ] };
    key <AE06> { [6, asciicircum, dead_circumflex, onequarter,    sixsubscript, sixsuperior ] };
    key <AE07> { [7,  ampersand,  dead_horn,       onehalf,       sevensubscript, sevensuperior ] };
    key <AE08> { [8, asterisk,    dead_ogonek,     threequarters, eightsubscript, eightsuperior ] };
-   key <AE09> { [9,  parenleft, leftsinglequotemark, dead_breve, ninesubscript, U207D] };
-   key <AE10> { [0, parenright, rightsinglequotemark, dead_abovering, zerosubscript, U207E] };
+   key <AE09> { [9,  parenleft, leftsinglequotemark, dead_breve, ninesubscript, ninesuperior] };
+   key <AE10> { [0, parenright, rightsinglequotemark, dead_abovering, zerosubscript, zerosuperior ] };
    // Weiwu: was: key <AE11> { [ minus,  underscore,       U207B,     dead_belowdot  ] };
    key <AE11> { [     minus, underscore,           yen,    dead_belowdot, U208B, U207B ] };
    key <AE12> { [     equal,       plus,      multiply,         division, U208C, U207A ] };
