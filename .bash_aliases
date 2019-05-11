@@ -1,5 +1,14 @@
 
-# manage media files
+# manage media filesif [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+
+if [ -f ~/bin/git-prompt.sh ]; then
+    source ~/bin/git-prompt.sh
+    export PS1='$(__git_ps1 "(%s) ")'$PS1
+fi
+
 function re-encapsulate { ffmpeg -i "$1" -c:v copy -c:a copy "$2"; }
 
 # layout the screen
@@ -22,7 +31,6 @@ alias vim-text='vim "+set tw=76" "+set fo+=wtcma"'
 #alias mp4mc='mc -d /media/tristan/8CA5-5A3B/ /media/tristan/D934-B74D/'
 #alias mtpmc='mc -d /run/user/1005/gvfs/*/*'
 #alias musicsync="rsync --exclude 'Fallout: New Vegas OST.mp3' --exclude iTunes --delete -rv pocahontas:'/var/run/media/yuliansu/Windows/Users/Yu\ Liansu/Music/' Music/"
-
 
 # shortcut to control xrandr to rotate vertically, useful for having 2 monitors
 #alias 1280='xrandr --output DFP4 --mode 1280x768xrandr --output DFP4 --mode 1280x768'
