@@ -11,7 +11,7 @@ fi
 
 function re-encapsulate { ffmpeg -i "$1" -c:v copy -c:a copy "$2"; }
 
-# layout the screen
+# layout the screen - knowing this info is useful to target-fish myself, I tweaked the numbers.
 wmctrl -x -r Brave-browser  -e 0,0000,000,1200,1380
 wmctrl -x -r Gnome-terminal -e 0,1267,000,0734,1370
 wmctrl -x -r Telegram       -e 0,1700,000,0861,700
