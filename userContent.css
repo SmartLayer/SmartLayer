@@ -1,0 +1,14 @@
+body.serif .moz-reader-content {
+	font-weight: normal;
+}
+
+.container.content-width3 {
+	max-width: 45em !important;
+}
+
+@media print {
+	body.light.serif.loaded { 
+		/* padding top is not needed when printing */
+		padding: 0 51px !important;
+	}
+}
