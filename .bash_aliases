@@ -2,12 +2,6 @@
 # manage media files
 function re-encapsulate { ffmpeg -i "$1" -c:v copy -c:a copy "$2"; }
 
-# layout the screen
-wmctrl -x -r Brave-browser  -e 0,0000,000,1200,1380
-wmctrl -x -r Gnome-terminal -e 0,1267,000,0734,1370
-wmctrl -x -r Telegram       -e 0,1700,000,0861,700
-wmctrl -x -r Signal         -e 0,1700,790,0860,650
-
 # manage library
 alias wordbank='vi ~/wordbank/p; strfile ~/wordbank/p'
 function biblioteca { cd ~/Dropbox/wordbank/library; grep -i "[^a-z]$1" *; }
