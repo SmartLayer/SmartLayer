@@ -1,7 +1,4 @@
-// Weiwu's setup 18.04 - took a few hours to make it avaiable to 18.04
-// because the upstream did unnecessary changes like randomly adding/removing
-// leading space, changing "Programmer Dvorak" into "programmer Dvorak",
-// adding empty tab at the end of the line etc
+// Weiwu's setup - applicable to Ubuntu 19.04 and 19.10
 
 // Ref:
 // https://unix.stackexchange.com/questions/196634/how-to-set-up-xkb-to-work-with-3-modifier-keys-and-2-switchable-layouts
