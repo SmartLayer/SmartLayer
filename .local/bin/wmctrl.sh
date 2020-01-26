@@ -3,7 +3,7 @@
 # HTML-1 is the external monitor when connected to the HTML port
 # DP-1 is the external monitor when connected to a display port through USB-C
 
-export resolution=`xrandr | awk 'external == 1 && $0  ~ /[+]/ {print $1; } $1 =="HDMI-1" { external = 1} $1 == "DP-1" {external = 1}'`
+export resolution=`xrandr | awk 'external == 1 && $0  ~ /[+]/ {print $1; exit } $2=="connected" { if ($1 == "DP-1" || $1 == "HDMI-1") external = 1} '`
 
 # 3 column layout
 if [ "$resolution" = "2560x1440" ]
