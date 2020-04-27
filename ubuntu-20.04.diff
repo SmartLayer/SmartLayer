@@ -1,0 +1,155 @@
+--- /usr/share/X11/xkb/symbols/us	2020-02-29 22:32:57.000000000 +1100
++++ us	2020-04-27 21:08:58.076485218 +1000
+@@ -1,3 +1,10 @@
++// Weiwu's setup - applicable to Ubuntu 19.04 and 19.10
++
++// Ref:
++// https://unix.stackexchange.com/questions/196634/how-to-set-up-xkb-to-work-with-3-modifier-keys-and-2-switchable-layouts
++// https://wiki.archlinux.org/index.php/X_KeyBoard_extension#Editing_the_layout
++// https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols
++
+ default  partial alphanumeric_keys modifier_keys
+ xkb_symbols "basic" {
+ 
+@@ -130,8 +137,8 @@
+     key <AB01> { [	   z,          Z,            ae,               AE ] };
+     key <AB02> { [	   x,          X,             x,                X ] };
+     key <AB03> { [	   c,          C,     copyright,             cent ] };
+-    key <AB04> { [	   v,          V,             v,                V ] };
+-    key <AB05> { [	   b,          B,             b,                B ] };
++    key <AB04> { [         v,          V,             v,                V ] };
++    key <AB05> { [         b,          B,             b,                B ] };
+     key <AB06> { [	   n,          N,        ntilde,           Ntilde ] };
+     key <AB07> { [	   m,          M,            mu,               mu ] };
+     key <AB08> { [     comma,       less,      ccedilla,         Ccedilla ] };
+@@ -361,7 +368,7 @@
+     key <AC03> { [         e,       E,      eacute ] };
+     key <AC04> { [         u,       U, ucircumflex ] };
+     key <AC05> { [         i,       I, icircumflex ] };
+-    key <AC10> { [         s,       S,      ssharp,            U1E9E ] };
++    key <AC10> { [         s,       S,      ssharp ] };
+ 
+     key <AB01> { [ semicolon,   colon, acircumflex ] };
+     key <AB02> { [         q,       Q,  odiaeresis,      dead_ogonek ] };
+@@ -604,7 +611,7 @@
+     key <AC07> { [ h,               H,              dead_acute                  ] };
+     key <AC08> { [ t,               T,              thorn,           THORN      ] };
+     key <AC09> { [ n,               N,              ntilde,          Ntilde     ] };
+-    key <AC10> { [ s,               S,              ssharp,          U1E9E      ] };
++    key <AC10> { [ s,               S,              ssharp                      ] };
+     key <AC11> { [ minus,           underscore,     hyphen,          endash     ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+     key <BKSL> { [ backslash,       bar                                         ] };
+ 
+@@ -774,7 +781,7 @@
+ 
+     key <AC01> { [            a,            A,          aacute,           Aacute ] };
+     key <AC02> { [            r,            R,      dead_grave,       asciitilde ] };
+-    key <AC03> { [            s,            S,          ssharp,        0x1001e9e ] };
++    key <AC03> { [            s,            S,          ssharp,       asciitilde ] };
+     key <AC04> { [            t,            T,      dead_acute, dead_doubleacute ] };
+     key <AC05> { [            d,            D,  dead_diaeresis,       asciitilde ] };
+     key <AC06> { [            h,            H,      dead_caron,       asciitilde ] };
+@@ -823,6 +830,7 @@
+ 
+    include "us(intl)"
+    name[Group1]= "English (intl., with AltGr dead keys)";
++   key.type="EIGHT_LEVEL";
+ 
+ // five dead keys moved into level3:
+ 
+@@ -831,11 +839,47 @@
+ 
+ // diversions from the MS Intl keyboard:
+ 
+-   key <AE01> { [        1, exclam,      onesuperior,  exclamdown      ] };
+-   key <AD04> { [        r, R,           ediaeresis,   Ediaeresis      ] };
+-   key <AC07> { [        j, J,           idiaeresis,   Idiaeresis      ] };
+-   key <AB02> { [        x, X,           oe,           OE              ] };
+-   key <AB04> { [        v, V,           registered,   registered      ] };
++   key <AD11> { [ bracketleft,  braceleft,  guillemotleft, leftdoublequotemark, U208D, U207D ] };
++   key <AD12> { [bracketright, braceright, guillemotright, rightdoublequotemark, U208E, U207E ] };
++
++   key <AC01> { [	   a,          A,        aacute,           Aacute, U1D44E, U1D43 ] };
++   key <AB05> { [	   b,          B,    Greek_beta,       Greek_BETA, U1D44F, U1D47] };
++   key <AB03> { [	   c,          C,     copyright,             cent, U1D450, U1D9C ] };
++   key <AC03> { [	   d,          D,           eth,              ETH, U1D451, U1D48 ] };
++   key <AD03> { [	   e,          E,        eacute,           Eacute, U1D452, U1D49 ] };
++   key <AC04> { [	   f,          F,             f,                F, U1D453, U1DA0 ] };
++   key <AC05> { [	   g,          G,             g,                G, U1D454, U1D4D ] };
++   key <AC06> { [	   h,          H,             h,                H, U210E,  U2B0 ] };
++   key <AD08> { [	   i,          I,        iacute,           Iacute, U1D456, U2071 ] };
++   key <AC07> { [        j, J,           idiaeresis,   Idiaeresis      ,  U1D457, U2B2] };
++   key <AC08> { [	   k,          K,            oe,               OE, U1D458, U1D4F ] };
++
++   key <AC09> { [	   l,          L,        oslash,         Ooblique, U1D459, U2E1 ] };
++   key <AB07> { [	   m,          M,            mu,               mu, U1D45A, U1D50 ] };
++   key <AB06> { [	   n,          N,        ntilde,           Ntilde, U1D45B, U207F ] };
++   key <AD09> { [	   o,          O,        oacute,           Oacute, U1D45C, U1D52 ] };
++   key <AD10> { [	   p,          P,    odiaeresis,       Odiaeresis, U1D45D, U1D56 ] };
++   key <AD01> { [	   q,          Q,    adiaeresis,       Adiaeresis, U1D45E] };
++   key <AD04> { [	   r,          R,    ediaeresis,       Ediaeresis, U1D45F, U02B3 ] };
++   key <AC02> { [	   s,          S,        ssharp,          section, U1D460, U02E2] };
++   key <AD05> { [	   t,          T,     Greek_tau,            THORN, U1D461, U1D57 ] };
++   key <AD07> { [	   u,          U,        uacute,           Uacute, U1D462, U1D58] };
++   // Weiwu:  U251 is Latin alpha. Greek_ALPHA fell into disuse since it look like "A"
++   key <AB04> { [	   v,          V,   Greek_alpha,             U251, U1D463, U1D5B ] };
++   key <AD02> { [	   w,          W,         aring,            Aring, U1D464, U02B7 ] };
++   key <AB02> { [	   x,          X,      Greek_xi,         Greek_XI, U1D465, U02E3 ] };
++   key <AD06> { [	   y,          Y,    udiaeresis,       Udiaeresis, U1D466, U02B8 ] };
++   key <AB01> { [	   z,          Z,            ae,               AE, U1D467, U1DBB ] };
++   key <AC10> { [ semicolon,      colon,     paragraph,           degree ] };
++   key <AB08> { [     comma,       less,      ccedilla,         Ccedilla ] };
++   key <AB09> { [    period,    greater, dead_abovedot,       dead_caron, periodcentered, ellipsis ] };
++   // Weiwu: was: key <AB10> { [     slash,   question,  questiondown,        dead_hook, ] };
++   // U2215: the division slash; U2044: the fraction slash
++   key <AB10> { [     slash,   question,  questiondown,        dead_hook, U2215, U2044] };
++   // Weiwu: was: key <BKSL> { [ backslash,        bar,       notsign,        brokenbar ] };
++   // U2116 is the numero sign
++   key <BKSL> { [ backslash, bar, dagger, doubledagger, section,  U2116] };
++   key <LSGT> { [ backslash, bar, dagger, doubledagger, section,  U2116] };
+ 
+ // onequarter etc (not in iso8859-15) moved to get three unshifted deadkeys:
+ 
+@@ -843,7 +887,24 @@
+    key <AE07> { [        7, ampersand,   dead_horn,       onehalf       ] };
+    key <AE08> { [        8, asterisk,    dead_ogonek,     threequarters ] };
+ 
++   key <AE01> { [1,     exclam,    exclamdown,      onesuperior, onesubscript, U207D] };
++   key <AE02> { [2,         at,   dead_doubleacute, twosuperior, twosubscript, U207E] };
++   key <AE03> { [3, numbersign,     dead_macron,  threesuperior, threesubscript, threesuperior ] };
++   // Weiwu: was: key <AE04> { [	   4,     dollar,      currency,         sterling] };
++   key <AE04> { [4,     dollar,     Thai_baht,         sterling, foursubscript, foursuperior] };
++   key <AE05> { [5,    percent,      EuroSign,     dead_cedilla, fivesubscript, fivesuperior ] };
++   key <AE06> { [6, asciicircum, dead_circumflex, onequarter,    sixsubscript, sixsuperior ] };
++   key <AE07> { [7,  ampersand,  dead_horn,       onehalf,       sevensubscript, sevensuperior ] };
++   key <AE08> { [8, asterisk,    dead_ogonek,     threequarters, eightsubscript, eightsuperior ] };
++   key <AE09> { [9,  parenleft, leftsinglequotemark, dead_breve, ninesubscript, ninesuperior] };
++   key <AE10> { [0, parenright, rightsinglequotemark, dead_abovering, zerosubscript, zerosuperior ] };
++   // Weiwu: was: key <AE11> { [ minus,  underscore,       U207B,     dead_belowdot  ] };
++   key <AE11> { [     minus, underscore,           yen,    dead_belowdot, U208B, U207B ] };
++   key <AE12> { [     equal,       plus,      multiply,         division, U208C, U207A ] };
++
++
+    include "level3(ralt_switch)"
++   include "level5(lwin_switch_lock)"
+ };
+ 
+ // Intel ClassmatePC Keyboard Layout
+@@ -1032,7 +1093,7 @@
+    key <AD12> { [bracketright, braceright,  0x1000330,   0x1000330 ] }; // combining tilde below
+ 
+    key <AC01>  { [         a,          A,          ae,               AE ] };
+-   key <AC02>  { [         s,          S,      ssharp,        0x1001E9E ] }; // uppercase S sharp
++   key <AC02>  { [         s,          S,      ssharp,        0x1001E9C ] }; // uppercase S sharp
+    key <AC03>  { [         d,          D,         eth,              ETH ] };
+    key <AC04>  { [         f,          F,       thorn,            THORN ] };
+    key <AC06>  { [         h,          H,    sterling,         sterling ] };
+@@ -1095,7 +1156,7 @@
+    key <AD12> { [bracketright, braceright,  0x1000330,   0x1000330 ] }; // combining tilde below
+ 
+    key <AC01>  { [         a,          A,          ae,               AE ] };
+-   key <AC02>  { [         s,          S,      ssharp,        0x1001E9E ] }; // uppercase S sharp
++   key <AC02>  { [         s,          S,      ssharp,        0x1001E9C ] }; // uppercase S sharp
+    key <AC03>  { [         d,          D,         eth,              ETH ] };
+    key <AC04>  { [         f,          F,       thorn,            THORN ] };
+    key <AC06>  { [         h,          H,    sterling,         sterling ] };
