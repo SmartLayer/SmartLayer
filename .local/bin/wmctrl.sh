@@ -33,16 +33,16 @@ fi
 # 4 column layout
 if [[ ${dimensions} = 3440* ]]
 then
-	wmctrl -x -r Telegram       -e 0,2579,000,0861,700
-	wmctrl -x -r Signal         -e 0,2579,790,0860,650
+	wmctrl -x -r Telegram       -e 0,0,000,0890,740
+	wmctrl -x -r Signal         -e 0,0,790,0860,650
 	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
-	wmctrl -x -r Firefox        -e 0,1378,0,1200,1374
+	wmctrl -x -r Firefox        -e 0,955,0,1280,1374
 	# so that the height can still be mouse-adjusted
 	#wmctrl -x -r Firefox -b add,maximized_vert
 
 	# this would allow Gnome-terminal to be of 80 columns
 	#wmctrl -x -r Gnome-terminal -e 0,618,000,0790,1370
-	wmctrl -x -r Gnome-terminal -e 0,45,000,1361,1370
+	wmctrl -x -r Gnome-terminal -e 0,2211,000,1256,1370
 fi
 
 
