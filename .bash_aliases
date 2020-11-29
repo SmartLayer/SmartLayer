@@ -53,3 +53,4 @@ alias xmlsectool="java -classpath /home/a/IdeaProjects/xmlsectool/target/classes
 alias ts-validate="LANG=en_US java -classpath $HOME/IdeaProjects/TokenScript/libs/XMLValidator.jar:$HOME/IdeaProjects/TokenScript/libs/xpath2-1.2.0.jar:$HOME/IdeaProjects/TokenScript/libs/xercesImpl.jar:$HOME/IdeaProjects/TokenScript/libs/xercesSamples.jar:xml-apis.jar XMLValidator $HOME/DitaProjects/TokenScript/schema/tokenscript.xsd"
 alias jq-functions="jq -r '.[] | select(.type == \"function\") | [.type, .name] | @tsv' "
 alias new-schema-is-good-for-old-tokenscripts='pushd ~/IdeaProjects/TokenScript-Examples/examples;  TOKENSCRIPT_SCHEMA=/home/weiwu/IdeaProjects/TokenScript/schema/tokenscript.xsd ./validate.sh  */*.xml */*/*.xml; popd'
+alias sleep_adb="sleep 10 ; adb tcpip 5555"
