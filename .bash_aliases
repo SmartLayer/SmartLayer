@@ -55,3 +55,4 @@ alias ts-validate="LANG=en_US java -classpath $HOME/IdeaProjects/TokenScript/lib
 alias jq-functions="jq -r '.[] | select(.type == \"function\") | [.type, .name] | @tsv' "
 alias new-schema-is-good-for-old-tokenscripts='pushd ~/IdeaProjects/TokenScript-Examples/examples;  TOKENSCRIPT_SCHEMA=/home/weiwu/IdeaProjects/TokenScript/schema/tokenscript.xsd ./validate.sh  */*.xml */*/*.xml; popd'
 alias sleep_adb="sleep 10 ; adb tcpip 5555"
+alias 2x="_JAVA_OPTIONS=-Dsun.java2d.uiScale=2.0"
