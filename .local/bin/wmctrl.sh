@@ -6,6 +6,8 @@
 #export resolution=`xrandr | awk 'external == 1 && $0  ~ /[+]/ {print $1; exit } $2=="connected" { if ($1 ~ "^DP-" || $1 ~ "^HDMI-" || $1 ~ "Virtual1") external = 1} '`
 export `xdpyinfo | grep dimension | awk  '{print $1 $2;}' | tr : =`
 
+wmctrl -x -r Signal -b remove,maximized_vert,maximized_horz
+
 # 2 column layout
 if [[ ${dimensions} = 1920* ]]
 then
