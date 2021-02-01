@@ -26,7 +26,7 @@ then
 	wmctrl -x -r Telegram       -e 0,1700,000,0861,700
 	wmctrl -x -r Signal         -e 0,1700,790,0860,650
 	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
-	wmctrl -x -r Firefox        -e 0,805,0,1200,1374
+	wmctrl -x -r Firefox        -e 0,805,0,1281,1374
 	# so that the height can still be mouse-adjusted
 	#wmctrl -x -r Firefox -b add,maximized_vert
 	wmctrl -x -r Gnome-terminal -e 0,45,000,0790,1370
@@ -38,7 +38,7 @@ then
 	wmctrl -x -r Telegram       -e 0,0,000,0890,740
 	wmctrl -x -r Signal         -e 0,0,790,0860,650
 	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
-	wmctrl -x -r Firefox        -e 0,955,0,1280,1374
+	wmctrl -x -r Firefox        -e 0,955,0,1281,1374
 	# so that the height can still be mouse-adjusted
 	#wmctrl -x -r Firefox -b add,maximized_vert
 
