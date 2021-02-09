@@ -13,9 +13,11 @@ if [[ ${dimensions} = 1920* ]]
 then
 	wmctrl -x -r Telegram       -e 0,1068,000,0821,1000
 	wmctrl -x -r Signal         -e 0,1068,000,0821,1020
-	wmctrl -x -r Gnome-terminal -e 0,1068,000,0866,1025
+	# 790px -> 80 columns
+	wmctrl -x -r Gnome-terminal -e 0,1106,000,0790,1025
 	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
-	wmctrl -x -r Firefox        -e 0,70,000,1024,1015
+	# 1060 px wide -> renders tradingview.com without overlapping
+	wmctrl -x -r Firefox        -e 0,70,000,1060,1015
 	wmctrl -x -r Firefox -b add,maximized_vert
 	wmctrl -x -r Gnome-terminal -b add,maximized_vert
 fi
