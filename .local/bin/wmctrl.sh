@@ -25,8 +25,8 @@ fi
 # 3 column layout
 if [[ ${dimensions} = 2560* ]]
 then
-	wmctrl -x -r Telegram       -e 0,1700,000,0861,700
-	wmctrl -x -r Signal         -e 0,1700,790,0860,650
+	wmctrl -x -r Telegram       -e 0,1700,790,0861,650
+	wmctrl -x -r Signal         -e 0,1700,000,0861,700
 	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
 	wmctrl -x -r Firefox        -e 0,805,0,1281,1374
 	# so that the height can still be mouse-adjusted
