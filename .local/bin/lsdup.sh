@@ -7,10 +7,6 @@
 # example 
 # dedup.sh dir_to_keep/ MEGAsync\ Downloads/ | xargs -d $'\n' rm
 
-# dedup.sh -s
-
 du -ab "$1" | awk -F $"\t" '$1 > 104857600 {print;}' | sort > /tmp/keep
 du -ab "$2" | awk -F $"\t" '$1 > 104857600 {print;}' | sort > /tmp/dup
-#join -j 1 -t $'\t' /tmp/keep /tmp/dup | awk -F $"\t" '{fn1 = $2; fn2 = $3; sub(/.*\//, "", fn1);sub(/.*\//, "", fn2); if (fn1 == fn2) print $3;}' 
-join -j 1 -t $'\t' /tmp/keep /tmp/dup | awk -F $"\t" '{print $3;}' 
-
+join -j 1 -t $'\t' /tmp/keep /tmp/dup | column -t -s $'\t'
