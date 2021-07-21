@@ -49,6 +49,23 @@ then
 	wmctrl -x -r Gnome-terminal -e 0,2211,000,1256,1370
 fi
 
+# a "centralised" layout, where the windows most focused on stay in the centre
+if [[ ${dimensions} = 3840* ]]
+then
+	wmctrl -x -r Discord -b remove,maximized_vert,maximized_horz
+	wmctrl -x -r Discord        -e 0,2600,000,1280,1280
+	wmctrl -x -r Telegram       -e 0,0,000,0890,740
+	wmctrl -x -r Signal         -e 0,2600,1380,1280,800
+	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
+	wmctrl -x -r Firefox        -e 0,1280,0,1281,1374
+	# so that the height can still be mouse-adjusted
+	#wmctrl -x -r Firefox -b add,maximized_vert
+
+	# this would allow Gnome-terminal to be of 80 columns
+	#wmctrl -x -r Gnome-terminal -e 0,618,000,0790,1370
+	wmctrl -x -r Gnome-terminal -e 0,1280,1380,1256,800
+fi
+
 
 if [ "$dimensions" = "" ]
 then
