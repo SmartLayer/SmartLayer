@@ -39,11 +39,28 @@ alias vim-text='vim "+set tw=76" "+set fo+=wtcma"'
 
 # manage media files
 function re-encapsulate { ffmpeg -i "$1" -c:v copy -c:a copy "$2"; }
+function video-contact-sheet { ffmpeg -i "$1"  -vf 'select=not(mod(n\,300)),tile=3x3'  "$2"; }
 # ffmpeg -i /tmp/record_2020-06-30-15-56-34.mp4 -vf scale=360:720 -r 15 record.gif
 function vid2gif {
 	# https://tyhopp.com/notes/ffmpeg-crosshatch
 	ffmpeg -i "$1" -vf palettegen /tmp/palette.png && \
 	ffmpeg -i "$1" -i /tmp/palette.png -filter_complex "fps=15, scale=640:-1, paletteuse=dither=none" "$1.gif"
+}
+function insane-dedup {
+	du -ab "$1" | sort -n | awk -F $'\t' '{printf("%16s\t%s\n", $1, $2)}' | uniq -w 16 -D
+}
+function vcs-ffmpeg {
+	ffmpeg -i "$1" -f image2 -vf 'scale=320:-1,drawtext=fontfile=/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf: text=%{pts:hms}: x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1, select=not(mod(n\,$((frames/9+1)))),tile=3x3' "$2"
+}
+
+function cclockwise-ffmpeg {
+	ffmpeg -i "$1" -c copy -metadata:s:v:0 rotate=90 "$2"
+}
+function  clockwise-ffmpeg {
+	ffmpeg -i "$1" -c copy -metadata:s:v:0 rotate=-90 "$2"
+}
+function context_grep {
+	grep -o "[a-zA-Z, .;]*$1[a-zA-Z, .;]*" $2
 }
 
 # if the Logitech Master 2S Mouse fail to connect, restore connection with this
@@ -55,3 +72,5 @@ alias jq-functions="jq -r '.[] | select(.type == \"function\") | [.type, .name] 
 alias new-schema-is-good-for-old-tokenscripts='pushd ~/IdeaProjects/TokenScript-Examples/examples;  TOKENSCRIPT_SCHEMA=/home/weiwu/IdeaProjects/TokenScript/schema/tokenscript.xsd ./validate.sh  */*.xml */*/*.xml; popd'
 alias sleep_adb="sleep 10 ; adb tcpip 5555"
 alias 2x="_JAVA_OPTIONS=-Dsun.java2d.uiScale=2.0"
+alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/"
+# echo 3067 1651 60 106
