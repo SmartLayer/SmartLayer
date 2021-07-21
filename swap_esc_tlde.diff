@@ -1,0 +1,14 @@
+diff --git a/us b/usr/share/X11/xkb/symbols/us
+index e93ce8a..c140e73 100644
+--- a/us
++++ b/usr/share/X11/xkb/symbols/us
+@@ -902,6 +902,9 @@ xkb_symbols "altgr-intl" {
+    key <AE11> { [     minus, underscore,           yen,    dead_belowdot, U208B, U207B ] };
+    key <AE12> { [     equal,       plus,      multiply,         division, U208C, U207A ] };
+ 
++   // Weiwu: TLDE becomes ESC, ESC becomes TILD
++   key <TLDE> { [    Escape ] };
++   key <ESC>  { [    grave, asciitilde,  dead_grave,   dead_tilde      ] };
+ 
+    include "level3(ralt_switch)"
+    include "level5(lwin_switch_lock)"
