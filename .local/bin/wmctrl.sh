@@ -8,45 +8,17 @@ export `xdpyinfo | grep dimension | awk  '{print $1 $2;}' | tr : =`
 
 wmctrl -x -r Signal -b remove,maximized_vert,maximized_horz
 
-# 2 column layout
-if [[ ${dimensions} = 1920* ]]
-then
-	wmctrl -x -r Telegram       -e 0,1068,000,0821,1000
-	wmctrl -x -r Signal         -e 0,1068,000,0821,1020
-	# 790px -> 80 columns
-	wmctrl -x -r Gnome-terminal -e 0,1106,000,0790,1025
-	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
-	# 1060 px wide -> renders tradingview.com without overlapping
-	wmctrl -x -r Firefox        -e 0,70,000,1060,1015
-	wmctrl -x -r Firefox -b add,maximized_vert
-	wmctrl -x -r Gnome-terminal -b add,maximized_vert
-fi
-
 # 3 column layout
 if [[ ${dimensions} = 2560* ]]
 then
-	wmctrl -x -r Telegram       -e 0,1700,790,0861,650
+	wmctrl -x -r Telegram       -e 0,1700,0,0861,1650
 	wmctrl -x -r Signal         -e 0,1700,000,0861,700
+	wmctrl -x -r Discord        -e 0,0,000,0861,1700
 	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
-	wmctrl -x -r Firefox        -e 0,805,0,1281,1374
-	# so that the height can still be mouse-adjusted
-	#wmctrl -x -r Firefox -b add,maximized_vert
-	wmctrl -x -r Gnome-terminal -e 0,45,000,0790,1370
-fi
-
-# 4 column layout
-if [[ ${dimensions} = 3440* ]]
-then
-	wmctrl -x -r Telegram       -e 0,0,000,0890,740
-	wmctrl -x -r Signal         -e 0,0,790,0860,650
-	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
-	wmctrl -x -r Firefox        -e 0,955,0,1281,1374
-	# so that the height can still be mouse-adjusted
-	#wmctrl -x -r Firefox -b add,maximized_vert
-
-	# this would allow Gnome-terminal to be of 80 columns
-	#wmctrl -x -r Gnome-terminal -e 0,618,000,0790,1370
-	wmctrl -x -r Gnome-terminal -e 0,2211,000,1256,1370
+	wmctrl -x -r Firefox        -e 0,780,0,1281,1000
+	wmctrl -x -r Firefox -b add,maximized_vert
+	wmctrl -x -r Gnome-terminal -e 0,800,800,1256,800
+	exit;
 fi
 
 # a "centralised" layout, where the windows most focused on stay in the centre
@@ -54,7 +26,8 @@ if [[ ${dimensions} = 3840* ]]
 then
 	wmctrl -x -r Discord -b remove,maximized_vert,maximized_horz
 	wmctrl -x -r Discord        -e 0,2600,000,1280,1280
-	wmctrl -x -r Telegram       -e 0,0,000,0890,740
+	wmctrl -x -r Telegram -b remove,maximized_vert,maximized_horz
+	wmctrl -x -r Telegram       -e 0,0,000,0890,2000
 	wmctrl -x -r Signal         -e 0,2600,1380,1280,800
 	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
 	wmctrl -x -r Firefox        -e 0,900,0,2096,1374
@@ -66,6 +39,7 @@ then
 	# this would allow Gnome-terminal to be of 80 columns
 	#wmctrl -x -r Gnome-terminal -e 0,618,000,0790,1370
 	wmctrl -x -r Gnome-terminal -e 0,1280,1380,1256,800
+	exit;
 fi
 
 
