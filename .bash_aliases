@@ -75,3 +75,4 @@ alias sleep_adb="sleep 10 ; adb tcpip 5555"
 alias 2x="_JAVA_OPTIONS=-Dsun.java2d.uiScale=2.0"
 alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/"
 # echo 3067 1651 60 106
+alias gnucash_CGCT="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/OneDrive/Businesses/Computer\ Graphic\ and\ Cryptographic\ Technology\ OÜ/Accounting/CGCT.gnucash"
