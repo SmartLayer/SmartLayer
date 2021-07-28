@@ -11,12 +11,15 @@ wmctrl -x -r Signal -b remove,maximized_vert,maximized_horz
 # 3 column layout
 if [[ ${dimensions} = 2560* ]]
 then
-	wmctrl -x -r Telegram       -e 0,1700,0,0861,1650
+	wmctrl -x -r Discord -b remove,maximized_vert,maximized_horz
+	wmctrl -x -r Discord        -e 0,0,0,800,800
+
 	wmctrl -x -r Signal         -e 0,1700,000,0861,700
 	wmctrl -x -r Discord        -e 0,0,000,0861,1700
 	wmctrl -x -r Firefox -b remove,maximized_vert,maximized_horz
 	wmctrl -x -r Firefox        -e 0,780,0,1281,1000
-	wmctrl -x -r Firefox -b add,maximized_vert
+	wmctrl -x -r jetbrains-idea -b remove,maximized_vert,maximized_horz
+	wmctrl -x -r jetbrains-idea        -e 0,600,0,1440,1440
 	wmctrl -x -r Gnome-terminal -e 0,800,800,1256,800
 	exit;
 fi
