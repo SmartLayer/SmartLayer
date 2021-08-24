@@ -891,7 +891,7 @@ xkb_symbols "altgr-intl" {
    key <AE02> { [2,         at,   dead_doubleacute, twosuperior, twosubscript, U207E] };
    key <AE03> { [3, numbersign,     dead_macron,  threesuperior, threesubscript, threesuperior ] };
    // Weiwu: was: key <AE04> { [	   4,     dollar,      currency,         sterling] };
-   key <AE04> { [4,     dollar,     Thai_baht,         sterling, foursubscript, foursuperior] };
+   key <AE04> { [4,     dollar,     Thai_baht,         EuroSign, foursubscript, foursuperior] };
    key <AE05> { [5,    percent,      EuroSign,     dead_cedilla, fivesubscript, fivesuperior ] };
    key <AE06> { [6, asciicircum, dead_circumflex, onequarter,    sixsubscript, sixsuperior ] };
    key <AE07> { [7,  ampersand,  dead_horn,       onehalf,       sevensubscript, sevensuperior ] };
