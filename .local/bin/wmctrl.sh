@@ -41,7 +41,7 @@ then
 
 	# this would allow Gnome-terminal to be of 80 columns
 	#wmctrl -x -r Gnome-terminal -e 0,618,000,0790,1370
-	wmctrl -x -r Gnome-terminal -e 0,1280,0,1256,820
+	wmctrl -x -r Gnome-terminal -e 0,1280,0,1256,780
 	exit;
 fi
 
