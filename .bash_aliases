@@ -62,6 +62,10 @@ function  clockwise-ffmpeg {
 function context_grep {
 	grep -o "[a-zA-Z, .;]*$1[a-zA-Z, .;]*" $2
 }
+function ffmpeg2h265 {
+	ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=1 -an -f null /dev/null && \
+	ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
+}
 
 # if the Logitech Master 2S Mouse fail to connect, restore connection with this
 # alias masterup="echo connect DA:8E:70:A2:34:F1 | bluetoothctl"
