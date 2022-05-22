@@ -80,5 +80,10 @@ alias sleep_adb="sleep 10 ; adb tcpip 5555"
 alias 2x="_JAVA_OPTIONS=-Dsun.java2d.uiScale=2.0"
 alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/"
 # echo 3067 1651 60 106
-alias gnucash_CGCT="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/OneDrive/Businesses/Computer\ Graphic\ and\ Cryptographic\ Technology\ OÜ/Accounting/CGCT.gnucash"
+alias gnucash_CGCT="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/Accounting/CGCT.gnucash'"
 alias qq="rm -r ~/.local/homes/qq/.config/tencent-qq/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]; bwrap --dev-bind / / --bind $HOME/.local/homes/qq $HOME --ro-bind $HOME/.Xauthority $HOME/.Xauthority --ro-bind /var/local/trove $HOME/Videos /usr/local/bin/qq"
+function gify {
+	convert "$1" "$1.gif"; 
+	convert "$1.gif" "$1"; 
+	rm "$1.gif";
+}
