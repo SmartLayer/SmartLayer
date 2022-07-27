@@ -66,6 +66,14 @@ function context_grep {
 # if the Logitech Master 2S Mouse fail to connect, restore connection with this
 # alias masterup="echo connect DA:8E:70:A2:34:F1 | bluetoothctl"
 
+# encode video files to HEVC (h265). Note that not all videos can be encoded
+# this way to mp4, better use .mkv format first argument is the source; second
+# the target. To do many in a role, e.g. batch encode from mp4 to mkv format, use
+
+# $ for i in *.mp4 ; do ffmpeg2h265 "$i" "$i".mkv ; done
+
+# It's not possible to do this in parallel fashion with xargs -P -i, because
+# the x265_2pass.log file name is fixed in ffmpeg.
 function ffmpeg2h265 {
 	ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=1 -an -f null /dev/null && \
 	ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
@@ -91,6 +99,7 @@ alias 2x="_JAVA_OPTIONS=-Dsun.java2d.uiScale=2.0"
 alias onedrive_sync="rclone sync -P OneDrive:Team/ ~/Team/"
 alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/"
 alias dropbox_mount="rclone --vfs-cache-mode writes mount Dropbox: ~/Dropbox/"
+alias gdrive_mount="rclone mount --drive-shared-with-me GDrive: ~/GDrive/"
 # echo 3067 1651 60 106
 alias gnucash_CGCT="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/Accounting/CGCT.gnucash'"
 alias qq="rm -r ~/.local/homes/qq/.config/tencent-qq/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]; bwrap --dev-bind / / --bind $HOME/.local/homes/qq $HOME --ro-bind $HOME/.Xauthority $HOME/.Xauthority --ro-bind /var/local/trove $HOME/Videos /usr/local/bin/qq"
