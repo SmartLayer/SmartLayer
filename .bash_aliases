@@ -75,8 +75,9 @@ function context_grep {
 # It's not possible to do this in parallel fashion with xargs -P -i, because
 # the x265_2pass.log file name is fixed in ffmpeg.
 function ffmpeg2h265 {
-	ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=1 -an -f null /dev/null && \
-	ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
+        ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=1 -an -f null /dev/null
+        ffmpeg    -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a copy  "$2"
+	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
 }
 function ffmpegcat {
 	# or with printf
