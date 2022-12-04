@@ -101,8 +101,13 @@ alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/
 alias dropbox_mount="rclone --vfs-cache-mode writes mount Dropbox: ~/Dropbox/"
 alias gdrive_mount="rclone mount --drive-shared-with-me GDrive: ~/GDrive/"
 # echo 3067 1651 60 106
+<<<<<<< HEAD
 alias RiverMill='cd ~/"OneDrive/Team/# Projects/- ⭐ RiverMill"'
 alias CGCT.gnucash="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/Accounting/CGCT.gnucash'"
 alias CGCT="cd ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/'"
 alias Espacio="cd ~/'OneDrive/Team/🇪🇸 Espacio Bizcocheros SL'"
 alias qq="rm -r ~/.local/homes/qq/.config/tencent-qq/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]; bwrap --dev-bind / / --bind $HOME/.local/homes/qq $HOME --ro-bind $HOME/.Xauthority $HOME/.Xauthority --ro-bind /var/local/trove $HOME/Videos /usr/local/bin/qq"
+alias gnucash_CGCT="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/OneDrive/Businesses/Computer\ Graphic\ and\ Cryptographic\ Technology\ OÜ/Accounting/CGCT.gnucash"
+function pdf_select_pages {
+	qpdf "$1" --pages . "$2" -- "$1".new && mv "$1.new" "$1"
+}
