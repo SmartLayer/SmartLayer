@@ -102,7 +102,6 @@ alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/
 alias dropbox_mount="rclone --vfs-cache-mode writes mount Dropbox: ~/Dropbox/"
 alias gdrive_mount="rclone mount --drive-shared-with-me GDrive: ~/GDrive/"
 # echo 3067 1651 60 106
-<<<<<<< HEAD
 alias RiverMill='cd ~/"OneDrive/Team/# Projects/- ⭐ RiverMill"'
 alias CGCT.gnucash="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/Accounting/CGCT.gnucash'"
 alias CGCT="cd ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/'"
