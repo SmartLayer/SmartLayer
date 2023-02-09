@@ -41,7 +41,7 @@ alias vim-text='vim "+set tw=76" "+set fo+=wtcma"'
 function re-encapsulate { ffmpeg -i "$1" -c:v copy -c:a copy "$2"; }
 function video-contact-sheet { ffmpeg -i "$1"  -vf 'select=not(mod(n\,300)),tile=3x3'  "$2"; }
 # ffmpeg -i /tmp/record_2020-06-30-15-56-34.mp4 -vf scale=360:720 -r 15 record.gif
-function vid2gif {
+function ffmpeg2gif {
 	# https://tyhopp.com/notes/ffmpeg-crosshatch
 	ffmpeg -i "$1" -vf palettegen /tmp/palette.png && \
 	ffmpeg -i "$1" -i /tmp/palette.png -filter_complex "fps=15, scale=640:-1, paletteuse=dither=none" "$1.gif"
@@ -105,7 +105,7 @@ alias gdrive_mount="rclone mount --drive-shared-with-me GDrive: ~/GDrive/"
 alias RiverMill='cd ~/"OneDrive/Team/# Projects/- ⭐ RiverMill"'
 alias CGCT.gnucash="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/Accounting/CGCT.gnucash'"
 alias CGCT="cd ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/'"
-alias Espacio="cd ~/'OneDrive/Team/🇪🇸 Espacio Bizcocheros SL'"
+alias Palacio="cd ~/'OneDrive/Team/🇪🇸 Palacio Bizcocheros SL'"
 alias qq="rm -r ~/.local/homes/qq/.config/tencent-qq/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]; bwrap --dev-bind / / --bind $HOME/.local/homes/qq $HOME --ro-bind $HOME/.Xauthority $HOME/.Xauthority --ro-bind /var/local/trove $HOME/Videos /usr/local/bin/qq"
 alias gnucash_CGCT="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/OneDrive/Businesses/Computer\ Graphic\ and\ Cryptographic\ Technology\ OÜ/Accounting/CGCT.gnucash"
 function pdf_select_pages {
