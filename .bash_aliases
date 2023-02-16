@@ -68,12 +68,12 @@ function context_grep {
 
 # encode video files to HEVC (h265). Note that not all videos can be encoded
 # this way to mp4, better use .mkv format first argument is the source; second
-# the target. To do many in a role, e.g. batch encode from mp4 to mkv format, use
-
-# $ for i in *.mp4 ; do ffmpeg2h265 "$i" "$i".mkv ; done
+# the target.
 
 # It's not possible to do this in parallel fashion with xargs -P -i, because
-# the x265_2pass.log file name is fixed in ffmpeg.
+# the x265_2pass.log file name is fixed in ffmpeg. To convert all mp4 files
+# in a folder one-by-one, use this:
+# $ for i in *.mp4; do ffmpeg2h265 "$i" `basename "$i" .mp4`.mkv; done
 function ffmpeg2h265 {
         ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=1 -an -f null /dev/null
         ffmpeg    -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a copy  "$2"
