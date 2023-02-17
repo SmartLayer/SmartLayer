@@ -78,6 +78,7 @@ function ffmpeg2h265 {
         ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=1 -an -f null /dev/null
         ffmpeg    -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a copy  "$2"
 	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
+	rm x265_2pass.log x265_2pass.log.cutree
 }
 function ffmpegcat {
 	# or with printf
@@ -97,7 +98,8 @@ alias jq-functions="jq -r '.[] | select(.type == \"function\") | [.type, .name] 
 alias new-schema-is-good-for-old-tokenscripts='pushd ~/IdeaProjects/TokenScript-Examples/examples;  TOKENSCRIPT_SCHEMA=/home/weiwu/IdeaProjects/TokenScript/schema/tokenscript.xsd ./validate.sh  */*.xml */*/*.xml; popd'
 alias sleep_adb="sleep 10 ; adb tcpip 5555"
 alias 2x="_JAVA_OPTIONS=-Dsun.java2d.uiScale=2.0"
-alias onedrive_sync="rclone sync -P OneDrive:Team/ ~/Team/"
+#alias onedrive_sync="rclone sync -P OneDrive:Team/ ~/Team/"
+alias team_sync="onedrive --synchronize --download-only --single-directory Team"
 alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/"
 alias dropbox_mount="rclone --vfs-cache-mode writes mount Dropbox: ~/Dropbox/"
 alias gdrive_mount="rclone mount --drive-shared-with-me GDrive: ~/GDrive/"
