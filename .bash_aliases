@@ -42,9 +42,20 @@ function re-encapsulate { ffmpeg -i "$1" -c:v copy -c:a copy "$2"; }
 function video-contact-sheet { ffmpeg -i "$1"  -vf 'select=not(mod(n\,300)),tile=3x3'  "$2"; }
 # ffmpeg -i /tmp/record_2020-06-30-15-56-34.mp4 -vf scale=360:720 -r 15 record.gif
 function ffmpeg2gif {
-	# https://tyhopp.com/notes/ffmpeg-crosshatch
-	ffmpeg -i "$1" -vf palettegen /tmp/palette.png && \
-	ffmpeg -i "$1" -i /tmp/palette.png -filter_complex "fps=15, scale=640:-1, paletteuse=dither=none" "$1.gif"
+	if [[ $2 == *.gif ]]
+	then
+		# https://tyhopp.com/notes/ffmpeg-crosshatch
+		ffmpeg -i "$1" -vf palettegen /tmp/palette.png && \
+		ffmpeg -i "$1" -i /tmp/palette.png -filter_complex "fps=15, scale=480:-1, paletteuse=dither=none" "$2"
+		rm /tmp/palette.png
+	else
+		echo "need 2 parameters, the last must be something.gif"
+	fi
+}
+function last_capture_to_gif {
+	pushd '/run/user/1000/gvfs/mtp:host=SAMSUNG_SAMSUNG_Android_R3CR90CYSDV/Memoria interna/DCIM/Screen Recordings'
+	ffmpeg2gif `ls | tail -n 1` /tmp/`ls | tail -n 1`.gif
+	popd
 }
 function insane-dedup {
 	du -ab "$1" | sort -n | awk -F $'\t' '{printf("%16s\t%s\n", $1, $2)}' | uniq -w 16 -D
@@ -74,9 +85,15 @@ function context_grep {
 # the x265_2pass.log file name is fixed in ffmpeg. To convert all mp4 files
 # in a folder one-by-one, use this:
 # $ for i in *.mp4; do ffmpeg2h265 "$i" `basename "$i" .mp4`.mkv; done
-function ffmpeg2h265 {
+function ffmpeg2hevc4k {
         ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=1 -an -f null /dev/null
         ffmpeg    -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a copy  "$2"
+	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
+	rm x265_2pass.log x265_2pass.log.cutree
+}
+function ffmpeg2hevc720p {
+        ffmpeg -y -i "$1" -c:v libx265 -b:v  600k -x265-params pass=1 -an -f null /dev/null
+        ffmpeg    -i "$1" -c:v libx265 -b:v  600k -x265-params pass=2 -c:a copy  "$2"
 	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
 	rm x265_2pass.log x265_2pass.log.cutree
 }
