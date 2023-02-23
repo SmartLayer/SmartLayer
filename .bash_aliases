@@ -97,6 +97,12 @@ function ffmpeg2hevc720p {
 	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
 	rm x265_2pass.log x265_2pass.log.cutree
 }
+function ffmpeg2hevc360p {
+        ffmpeg -y -i "$1" -c:v libx265 -b:v  150k -x265-params pass=1 -an -f null /dev/null
+        ffmpeg    -i "$1" -c:v libx265 -b:v  150k -x265-params pass=2 -c:a copy  "$2"
+	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
+	rm x265_2pass.log x265_2pass.log.cutree
+}
 function ffmpegcat {
 	# or with printf
 	printf "file '%s'\n" $* > mylist.txt
