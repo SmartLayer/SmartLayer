@@ -11,44 +11,6 @@
  default partial alphanumeric_keys modifier_keys
  xkb_symbols "basic" {
  
-@@ -130,8 +137,8 @@
-     key <AB01> { [	   z,          Z,            ae,               AE ] };
-     key <AB02> { [	   x,          X,             x,                X ] };
-     key <AB03> { [	   c,          C,     copyright,             cent ] };
--    key <AB04> { [	   v,          V,             v,                V ] };
--    key <AB05> { [	   b,          B,             b,                B ] };
-+    key <AB04> { [         v,          V,             v,                V ] };
-+    key <AB05> { [         b,          B,             b,                B ] };
-     key <AB06> { [	   n,          N,        ntilde,           Ntilde ] };
-     key <AB07> { [	   m,          M,            mu,               mu ] };
-     key <AB08> { [     comma,       less,      ccedilla,         Ccedilla ] };
-@@ -359,7 +366,7 @@
-     key <AC03> { [         e,       E,      eacute ] };
-     key <AC04> { [         u,       U, ucircumflex ] };
-     key <AC05> { [         i,       I, icircumflex ] };
--    key <AC10> { [         s,       S,      ssharp,            U1E9E ] };
-+    key <AC10> { [         s,       S,      ssharp ] };
- 
-     key <AB01> { [ semicolon,   colon, acircumflex ] };
-     key <AB02> { [         q,       Q,  odiaeresis,      dead_ogonek ] };
-@@ -602,7 +609,7 @@
-     key <AC07> { [ h,               H,              dead_acute                  ] };
-     key <AC08> { [ t,               T,              thorn,           THORN      ] };
-     key <AC09> { [ n,               N,              ntilde,          Ntilde     ] };
--    key <AC10> { [ s,               S,              ssharp,          U1E9E      ] };
-+    key <AC10> { [ s,               S,              ssharp                      ] };
-     key <AC11> { [ minus,           underscore,     hyphen,          endash     ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
-     key <BKSL> { [ backslash,       bar                                         ] };
- 
-@@ -770,7 +777,7 @@
- 
-     key <AC01> { [            a,            A,          aacute,           Aacute ] };
-     key <AC02> { [            r,            R,      dead_grave,       asciitilde ] };
--    key <AC03> { [            s,            S,          ssharp,        0x1001e9e ] };
-+    key <AC03> { [            s,            S,          ssharp,       asciitilde ] };
-     key <AC04> { [            t,            T,      dead_acute, dead_doubleacute ] };
-     key <AC05> { [            d,            D,  dead_diaeresis,       asciitilde ] };
-     key <AC06> { [            h,            H,      dead_caron,       asciitilde ] };
 @@ -897,6 +904,7 @@
  
     include "us(intl)"
@@ -118,11 +80,11 @@
 +   key <AE02> { [2,         at,   dead_doubleacute, twosuperior, twosubscript, U207E] };
 +   key <AE03> { [3, numbersign,     dead_macron,  threesuperior, threesubscript, threesuperior ] };
 +   // Weiwu: was: key <AE04> { [	   4,     dollar,      currency,         sterling] };
-+   key <AE04> { [4,     dollar,     Thai_baht,         sterling, foursubscript, foursuperior] };
-+   key <AE05> { [5,    percent,      EuroSign,     dead_cedilla, fivesubscript, fivesuperior ] };
-+   key <AE06> { [6, asciicircum, dead_circumflex, onequarter,    sixsubscript, sixsuperior ] };
-+   key <AE07> { [7,  ampersand,  dead_horn,       onehalf,       sevensubscript, sevensuperior ] };
-+   key <AE08> { [8, asterisk,    dead_ogonek,     threequarters, eightsubscript, eightsuperior ] };
++   key <AE04> { [4,     dollar,             EuroSign, Thai_baht, foursubscript, foursuperior] };
++   key <AE05> { [5,    percent,            degree, dead_cedilla, fivesubscript, fivesuperior ] };
++   key <AE06> { [6, asciicircum, dead_circumflex,    onequarter, sixsubscript, sixsuperior ] };
++   key <AE07> { [7,  ampersand,              dead_horn, onehalf, sevensubscript, sevensuperior ] };
++   key <AE08> { [8,   asterisk,      dead_ogonek, threequarters, eightsubscript, eightsuperior ] };
 +   key <AE09> { [9,  parenleft, leftsinglequotemark, dead_breve, ninesubscript, ninesuperior] };
 +   key <AE10> { [0, parenright, rightsinglequotemark, dead_abovering, zerosubscript, zerosuperior ] };
 +   // Weiwu: was: key <AE11> { [ minus,  underscore,       U207B,     dead_belowdot  ] };

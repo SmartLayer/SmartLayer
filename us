@@ -1,10 +1,3 @@
-// Weiwu's setup - applicable to Ubuntu 19.04 and 19.10
-
-// Ref:
-// https://unix.stackexchange.com/questions/196634/how-to-set-up-xkb-to-work-with-3-modifier-keys-and-2-switchable-layouts
-// https://wiki.archlinux.org/index.php/X_KeyBoard_extension#Editing_the_layout
-// https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols
-
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "basic" {
 
@@ -137,8 +130,8 @@ xkb_symbols "intl" {
     key <AB01> { [	   z,          Z,            ae,               AE ] };
     key <AB02> { [	   x,          X,             x,                X ] };
     key <AB03> { [	   c,          C,     copyright,             cent ] };
-    key <AB04> { [         v,          V,             v,                V ] };
-    key <AB05> { [         b,          B,             b,                B ] };
+    key <AB04> { [	   v,          V,             v,                V ] };
+    key <AB05> { [	   b,          B,             b,                B ] };
     key <AB06> { [	   n,          N,        ntilde,           Ntilde ] };
     key <AB07> { [	   m,          M,            mu,               mu ] };
     key <AB08> { [     comma,       less,      ccedilla,         Ccedilla ] };
@@ -366,7 +359,7 @@ xkb_symbols "dvorak-alt-intl" {
     key <AC03> { [         e,       E,      eacute ] };
     key <AC04> { [         u,       U, ucircumflex ] };
     key <AC05> { [         i,       I, icircumflex ] };
-    key <AC10> { [         s,       S,      ssharp ] };
+    key <AC10> { [         s,       S,      ssharp,            U1E9E ] };
 
     key <AB01> { [ semicolon,   colon, acircumflex ] };
     key <AB02> { [         q,       Q,  odiaeresis,      dead_ogonek ] };
@@ -609,7 +602,7 @@ xkb_symbols "dvp" {
     key <AC07> { [ h,               H,              dead_acute                  ] };
     key <AC08> { [ t,               T,              thorn,           THORN      ] };
     key <AC09> { [ n,               N,              ntilde,          Ntilde     ] };
-    key <AC10> { [ s,               S,              ssharp                      ] };
+    key <AC10> { [ s,               S,              ssharp,          U1E9E      ] };
     key <AC11> { [ minus,           underscore,     hyphen,          endash     ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
     key <BKSL> { [ backslash,       bar                                         ] };
 
@@ -777,7 +770,7 @@ xkb_symbols "colemak" {
 
     key <AC01> { [            a,            A,          aacute,           Aacute ] };
     key <AC02> { [            r,            R,      dead_grave,       asciitilde ] };
-    key <AC03> { [            s,            S,          ssharp,       asciitilde ] };
+    key <AC03> { [            s,            S,          ssharp,        0x1001e9e ] };
     key <AC04> { [            t,            T,      dead_acute, dead_doubleacute ] };
     key <AC05> { [            d,            D,  dead_diaeresis,       asciitilde ] };
     key <AC06> { [            h,            H,      dead_caron,       asciitilde ] };
@@ -911,6 +904,13 @@ xkb_symbols "altgr-intl" {
    key <TLDE> { [    grave, asciitilde,  dead_grave,   dead_tilde      ] };
    key <AC11> { [apostrophe,quotedbl,    dead_acute,   dead_diaeresis  ] };
 
+// Weiwu's override rules - applicable to Ubuntu 22.04
+
+// Ref:
+// https://unix.stackexchange.com/questions/196634/how-to-set-up-xkb-to-work-with-3-modifier-keys-and-2-switchable-layouts
+// https://wiki.archlinux.org/index.php/X_KeyBoard_extension#Editing_the_layout
+// https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols
+
 // diversions from the MS Intl keyboard:
 
    key <AD11> { [ bracketleft,  braceleft,  guillemotleft, leftdoublequotemark, U208D, U207D ] };
@@ -948,15 +948,16 @@ xkb_symbols "altgr-intl" {
    key <AB08> { [     comma,       less,      ccedilla,         Ccedilla ] };
    key <AB09> { [    period,    greater, dead_abovedot,       dead_caron, periodcentered, ellipsis ] };
    // Weiwu: was: key <AB10> { [     slash,   question,  questiondown,        dead_hook, ] };
-   // U2215: the division slash; U2044: the fraction slash
+   // U2215: the division slash, like in 1∕2; U2044: the fraction slash, like in 1⁄2
    key <AB10> { [     slash,   question,  questiondown,        dead_hook, U2215, U2044] };
    // Weiwu: was: key <BKSL> { [ backslash,        bar,       notsign,        brokenbar ] };
-   // U2116 is the numero sign
+   // U2116 is the numero sign №
    key <BKSL> { [ backslash, bar, dagger, doubledagger, section,  U2116] };
    key <LSGT> { [ backslash, bar, dagger, doubledagger, section,  U2116] };
 
 // onequarter etc (not in iso8859-15) moved to get three unshifted deadkeys:
 
+   // Weiwu: the following 3 lines are overridden shortly aftet
    key <AE06> { [        6, asciicircum, dead_circumflex, onequarter    ] };
    key <AE07> { [        7, ampersand,   dead_horn,       onehalf       ] };
    key <AE08> { [        8, asterisk,    dead_ogonek,     threequarters ] };
@@ -964,16 +965,15 @@ xkb_symbols "altgr-intl" {
    key <AE01> { [1,     exclam,    exclamdown,      onesuperior, onesubscript, U207D] };
    key <AE02> { [2,         at,   dead_doubleacute, twosuperior, twosubscript, U207E] };
    key <AE03> { [3, numbersign,     dead_macron,  threesuperior, threesubscript, threesuperior ] };
-   // Weiwu: was: key <AE04> { [	   4,     dollar,      currency,         sterling] };
-   key <AE04> { [4,     dollar,     Thai_baht,         sterling, foursubscript, foursuperior] };
-   key <AE05> { [5,    percent,      EuroSign,     dead_cedilla, fivesubscript, fivesuperior ] };
-   key <AE06> { [6, asciicircum, dead_circumflex, onequarter,    sixsubscript, sixsuperior ] };
-   key <AE07> { [7,  ampersand,  dead_horn,       onehalf,       sevensubscript, sevensuperior ] };
-   key <AE08> { [8, asterisk,    dead_ogonek,     threequarters, eightsubscript, eightsuperior ] };
+   key <AE04> { [4,     dollar,             EuroSign, Thai_baht, foursubscript, foursuperior] };
+   key <AE05> { [5,    percent,            degree, dead_cedilla, fivesubscript, fivesuperior ] };
+   key <AE06> { [6, asciicircum, dead_circumflex,    onequarter, sixsubscript, sixsuperior ] };
+   key <AE07> { [7,  ampersand,              dead_horn, onehalf, sevensubscript, sevensuperior ] };
+   key <AE08> { [8,   asterisk,      dead_ogonek, threequarters, eightsubscript, eightsuperior ] };
    key <AE09> { [9,  parenleft, leftsinglequotemark, dead_breve, ninesubscript, ninesuperior] };
    key <AE10> { [0, parenright, rightsinglequotemark, dead_abovering, zerosubscript, zerosuperior ] };
-   // Weiwu: was: key <AE11> { [ minus,  underscore,       U207B,     dead_belowdot  ] };
-   key <AE11> { [     minus, underscore,           yen,    dead_belowdot, U208B, U207B ] };
+   // Weiwu: I never use U207B: ⁻ (originally assigned to AE11), nor U208B ₋. 
+   key <AE11> { [     minus, underscore,           yen,    dead_belowdot, U00BA, U00AA ] };
    key <AE12> { [     equal,       plus,      multiply,         division, U208C, U207A ] };
 
 
