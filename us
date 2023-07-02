@@ -911,6 +911,59 @@ xkb_symbols "altgr-intl" {
 // https://wiki.archlinux.org/index.php/X_KeyBoard_extension#Editing_the_layout
 // https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols
 
+// All cicles explained: 
+//      super+'0'   : subscript zero
+// super+shift+'0'  : superscript zero
+//   alt+shift+'0'  : dead_abovering, used to type ů
+//   alt+shift+'0'×2: degree symbol, like 37°C
+//   alt+shift+';'  : ditto
+//         alt+'%'  : ditto
+//       super+'-'  : Masculine Ordinal indicator, like Puerto 80º, meaning port 80
+// super+shift+'-'  : Feminine Ordinal indicator, like la planta 13ª, meaning the 13th floor
+
+// All dots explained
+// alt+shift+'-': dead key for a dot under ḍ
+// super+':': middle dot like ·
+
+// There are minor unsatisfactions such as
+
+// - the lack of superscript minus. very rearly used because Weiwu uses
+//   superscript to denote elliptic curve math which is often plus. But it can
+//   be argued that the cardinal number signs should be moved to period '.', so
+//   the superscirpt minus returns
+
+// - Nothing maps to 'trademark' or 'registered'. There are 2 ways to produce
+//   superscript brackets, so one idea is to use alt+shift+'1' for tradmark
+//   and to use alt+shift+'2' for registered.
+
+// - there are 3 ways to produce degree sign °
+// - there are two ways to produce §
+// - alt+g and alt+shift+g has nothing special
+// - alt+h and alt+shift+h has nothing special
+// - alt+m and alt+shift+m are the same
+// - super+shift+'q' produces nothing
+// - Latin Alpha ɑ was never used in reality
+// - Copyright © was never used in real life
+// - Nothing happens with super plus period or comma
+
+
+// ┌────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━┓
+// │ ~~ │ !¹⁽ │ @²⁾ │ #³³ │ $฿⁴ │ %¸⁵ │ ^¼⁶ │ 7½⁷ │ 8¾⁸ │ 9˘⁹ │ |°⁰ │ _ ̣ª │ =÷⁺ ┃Back    ┃
+// │ `` │ 1¡₁ │ 2˝₂ │ 3¯₃ │ 4€₄ │ 5°₅ │ 6^₆ │ 7 ̛₇ │ 8˛₈ │ 9‘₉ │ 0’₀ │ -¥º │ +×₌ ┃space⌫  ┃
+// ┢━━━━┷━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┺━━┳━━━━━┫
+// ┃Tab    ┃ QÄ  │ WÅʷ │ EÉᵉ │ RËʳ │ TÞᵗ │ YÜʸ │ UÚᵘ │ IÍⁱ │ OÓᵒ │ PÓᵒ │ [“⁽ │ ]”⁾ ┃ |‡№ ┃
+// ┃ ↹     ┃ qä𝑞 │ wå𝑤 │ eé𝑒 │ rë𝑟 │ tτ𝑡 │ yü𝑦 │ uú𝑢 │ ií𝑖 │ oó𝑜 │ pö𝑜 │ («₍ │ )»₎ ┃ \†§ ┃
+// ┣━━━━━━━┻━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─┬───┴──┬──┴──┬──┴──┬──┴──┬──┴──┲━━┻━━━━━┫
+// ┃Caps      ┃ AÁᵃ │ S§ˢ │ DÐᵈ │ FƑᶠ │ GGG │ HHʰ │ JÏʲ │ KŒᵏ │ LØˡ │ :°  │ "¨  ┃ ⏎      ┃
+// ┃Lock  ⇬   ┃ aá𝑎 │ sß𝑠 │ dð𝑑 │ fƒ𝑓 │ ggg │ hhℎ │ jï𝑗 │ kœ𝑘 │ lø𝑙 │ ;¶  │ '´  ┃ Enter  ┃
+// ┣━━━━━━━━━━┻━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┲━━━┻━━━━━━━━┫
+// ┃Shift       ┃ ZÆᶻ │ XΞˣ │ C¢ᶜ │ Vɑᵛ │ BΒᵇ │ NÑⁿ │ Mµᵐ │ ,Ç  │ ;ˇ… │ ? ̉⁄ ┃Shift       ┃
+// ┃ ⇧          ┃ zæ𝑧 │ xξ𝑥 │ c©𝑐 │ vα𝑣 │ bβ𝑏 │ nñ𝑛 │ mµ𝑚 │ .ç  │ :˙· │ /¿∕ ┃ ⇧          ┃
+// ┣━━━━━━━┳━━━━┻━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴────┲┷━━━━┳┷━━━━┳┻━━━━━┳━━━━━━┫
+// ┃Ctrl   ┃ Super ┃Alt    ┃ ␣ Space            Nobreakspace ⍽ ┃AltGr┃ Fn  ┃ Ctxt ┃ Ctrl ┃
+// ┃       ┃       ┃       ┃ ␣ Space            Nobreakspace ⍽ ┃     ┃     ┃ Menu ┃      ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━┻━━━━━┻━━━━━━┻━━━━━━┛
+
 // diversions from the MS Intl keyboard:
 
    key <AD11> { [ bracketleft,  braceleft,  guillemotleft, leftdoublequotemark, U208D, U207D ] };
@@ -921,7 +974,7 @@ xkb_symbols "altgr-intl" {
    key <AB03> { [	   c,          C,     copyright,             cent, U1D450, U1D9C ] };
    key <AC03> { [	   d,          D,           eth,              ETH, U1D451, U1D48 ] };
    key <AD03> { [	   e,          E,        eacute,           Eacute, U1D452, U1D49 ] };
-   key <AC04> { [	   f,          F,             f,                F, U1D453, U1DA0 ] };
+   key <AC04> { [	   f,          F,     0x1000192,        0x1000191, U1D453, U1DA0 ] };
    key <AC05> { [	   g,          G,             g,                G, U1D454, U1D4D ] };
    key <AC06> { [	   h,          H,             h,                H, U210E,  U2B0 ] };
    key <AD08> { [	   i,          I,        iacute,           Iacute, U1D456, U2071 ] };
@@ -965,7 +1018,8 @@ xkb_symbols "altgr-intl" {
    key <AE01> { [1,     exclam,    exclamdown,      onesuperior, onesubscript, U207D] };
    key <AE02> { [2,         at,   dead_doubleacute, twosuperior, twosubscript, U207E] };
    key <AE03> { [3, numbersign,     dead_macron,  threesuperior, threesubscript, threesuperior ] };
-   key <AE04> { [4,     dollar,             EuroSign, Thai_baht, foursubscript, foursuperior] };
+   // 0x10020bf is “₿” U+20BF Bitcoin Sign Unicode Character
+   key <AE04> { [4,     dollar,             EuroSign, 0x10020bf, foursubscript, foursuperior] };
    key <AE05> { [5,    percent,            degree, dead_cedilla, fivesubscript, fivesuperior ] };
    key <AE06> { [6, asciicircum, dead_circumflex,    onequarter, sixsubscript, sixsuperior ] };
    key <AE07> { [7,  ampersand,              dead_horn, onehalf, sevensubscript, sevensuperior ] };
