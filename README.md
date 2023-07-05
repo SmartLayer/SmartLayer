@@ -59,3 +59,22 @@ key <ESC> { [    grave, asciitilde,  dead_grave,   dead_tilde, Escape ] };
 
 This layout is designed to enhance the typing experience for users frequently working with mathematical symbols and expressions. Your feedback and suggestions for improvement are always welcome.
 
+## Known Issues
+
+While the `math-friendly-xkb` layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
+
+- **Superscript Minus**: Currently, there is no superscript minus symbol. This is rarely an issue as superscripts are often used for elliptic curve math, which primarily involves addition. However, it could be argued that the cardinal number signs should not be there, as superscript O, and superscript A does the job for muscular and femine cardinal, the unicode specifically for these 2 symbols are arguably overdsigned.
+
+- **Trademark and Registered Symbols**: There are currently no mappings for the 'trademark' or 'registered' symbols. One potential solution is to use `alt+shift+'1'` for the trademark symbol and `alt+shift+'2'` for the registered symbol, as there are two ways to produce superscript brackets.
+
+- **Degree Sign**: There are three ways to produce the degree sign (°), which may be unnecessary.
+
+- **Section Sign**: There are two ways to produce the section sign (§), which may be redundant.
+
+- **Unused Alt Key Combinations**: The combinations `alt+g`, `alt+shift+g`, `alt+h`, `alt+shift+h`, and `alt+m` and `alt+shift+m` currently do not produce any special symbols.
+
+- **Super Key Issues**: The combination `super+shift+'q'` produces nothing. Also, nothing happens with `super` plus period or comma.
+
+- **Rarely Used Symbols**: The Latin Alpha (ɑ) and Copyright (©) symbols have not been used in real life scenarios.
+
+These issues are minor and do not significantly impact the overall functionality of the layout. However, they will be considered for future updates and improvements.
