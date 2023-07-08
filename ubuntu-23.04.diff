@@ -1,0 +1,141 @@
+--- /usr/share/X11/xkb/symbols/us	2023-07-08 10:55:37.321734057 +0200
++++ us	2023-07-08 11:15:32.758756080 +0200
+@@ -952,10 +952,17 @@
+ };
+ 
+ 
++/// Weiwu's override rules has 3 leading slashs
++
+ // I do NOT like dead-keys - the International keyboard as defined by Microsoft
+ // does not fit my needs. Why use two keystrokes for all simple characters (eg '
+ // and <space> generates a single ') just to have an é (eacute) in two strokes
+ // as well? I type ' more often than é (eacute).
++
++/// No one like dead-keys, and users of this keyboard type é with AltGr+e, not
++/// with a dead key. The keyboard is optimised for typing Spanish and French,
++/// where only a handful of words needs dead keys, such as bilingüe.
++
+ //
+ // This file works just like a regular keyboard, BUT has all dead-keys
+ // accessible at level3 (through AltGr). An ë (ediaeresis) is now: AltGr+"
+@@ -977,12 +984,45 @@
+ 
+    include "us(intl)"
+    name[Group1]= "English (intl., with AltGr dead keys)";
++   key.type="EIGHT_LEVEL";
+ 
+ // five dead keys moved into level3:
+ 
+    key <TLDE> { [    grave, asciitilde,  dead_grave,   dead_tilde      ] };
+    key <AC11> { [apostrophe,quotedbl,    dead_acute,   dead_diaeresis  ] };
+ 
++/// All cicles explained: 
++///      super+'0'   : subscript zero
++/// super+shift+'0'  : superscript zero
++///   alt+shift+'0'  : dead_abovering, used to type ů
++///   alt+shift+'0'×2: degree symbol, like 37°C
++///   alt+shift+';'  : ditto
++///         alt+'%'  : ditto
++///       super+'-'  : Masculine Ordinal indicator, like Puerto 80º, meaning port 80
++/// super+shift+'-'  : Feminine Ordinal indicator, like la planta 13ª, meaning the 13th floor
++///
++/// All dots explained
++/// alt+shift+'-': dead key for a dot under ḍ
++/// super+':': middle dot like ·
++///
++/// ┌────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━┓
++/// │ ~~ │ !¹⁽ │ @²⁾ │ #³³ │ $฿⁴ │ %¸⁵ │ ^¼⁶ │ 7½⁷ │ 8¾⁸ │ 9˘⁹ │ |°⁰ │ _ ̣ª │ =÷⁺ ┃Back    ┃
++/// │ `` │ 1¡₁ │ 2˝₂ │ 3¯₃ │ 4€₄ │ 5°₅ │ 6^₆ │ 7 ̛₇ │ 8˛₈ │ 9‘₉ │ 0’₀ │ -¥º │ +×₌ ┃space⌫  ┃
++/// ┢━━━━┷━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┺━━┳━━━━━┫
++/// ┃Tab    ┃ QÄ  │ WÅʷ │ EÉᵉ │ RËʳ │ TÞᵗ │ YÜʸ │ UÚᵘ │ IÍⁱ │ OÓᵒ │ PÓᵒ │ [“⁽ │ ]”⁾ ┃ |‡№ ┃
++/// ┃ ↹     ┃ qä𝑞 │ wå𝑤 │ eé𝑒 │ rë𝑟 │ tτ𝑡 │ yü𝑦 │ uú𝑢 │ ií𝑖 │ oó𝑜 │ pö𝑜 │ («₍ │ )»₎ ┃ \†§ ┃
++/// ┣━━━━━━━┻━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─┬───┴──┬──┴──┬──┴──┬──┴──┬──┴──┲━━┻━━━━━┫
++/// ┃Caps      ┃ AÁᵃ │ S§ˢ │ DÐᵈ │ FƑᶠ │ GGG │ HHʰ │ JÏʲ │ KŒᵏ │ LØˡ │ :°  │ "¨  ┃ ⏎      ┃
++/// ┃Lock  ⇬   ┃ aá𝑎 │ sß𝑠 │ dð𝑑 │ fƒ𝑓 │ ggg │ hhℎ │ jï𝑗 │ kœ𝑘 │ lø𝑙 │ ;¶  │ '´  ┃ Enter  ┃
++/// ┣━━━━━━━━━━┻━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┲━━━┻━━━━━━━━┫
++/// ┃Shift       ┃ ZÆᶻ │ XΞˣ │ C¢ᶜ │ Vɑᵛ │ BΒᵇ │ NÑⁿ │ Mµᵐ │ ,Ç  │ ;ˇ… │ ? ̉⁄ ┃Shift       ┃
++/// ┃ ⇧          ┃ zæ𝑧 │ xξ𝑥 │ c©𝑐 │ vα𝑣 │ bβ𝑏 │ nñ𝑛 │ mµ𝑚 │ .ç  │ :˙· │ /¿∕ ┃ ⇧          ┃
++/// ┣━━━━━━━┳━━━━┻━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴────┲┷━━━━┳┷━━━━┳┻━━━━━┳━━━━━━┫
++/// ┃Ctrl   ┃ Super ┃Alt    ┃ ␣ Space            Nobreakspace ⍽ ┃AltGr┃ Fn  ┃ Ctxt ┃ Ctrl ┃
++/// ┃       ┃       ┃       ┃ ␣ Space            Nobreakspace ⍽ ┃     ┃     ┃ Menu ┃      ┃
++/// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━┻━━━━━┻━━━━━━┻━━━━━━┛
++
++
+ // diversions from the MS Intl keyboard:
+ 
+    key <AE01> { [        1, exclam,      onesuperior,  exclamdown      ] };
+@@ -991,13 +1031,74 @@
+    key <AB02> { [        x, X,           oe,           OE              ] };
+    key <AB04> { [        v, V,           registered,   trademark       ] };
+ 
++   key <AD11> { [ bracketleft,  braceleft,  guillemotleft, leftdoublequotemark, U208D, U207D ] };
++   key <AD12> { [bracketright, braceright, guillemotright, rightdoublequotemark, U208E, U207E ] };
++
++   key <AC01> { [	   a,          A,        aacute,           Aacute, U1D44E, U1D43 ] };
++   key <AB05> { [	   b,          B,    Greek_beta,       Greek_BETA, U1D44F, U1D47] };
++   key <AB03> { [	   c,          C,     copyright,             cent, U1D450, U1D9C ] };
++   key <AC03> { [	   d,          D,           eth,              ETH, U1D451, U1D48 ] };
++   key <AD03> { [	   e,          E,        eacute,           Eacute, U1D452, U1D49 ] };
++   key <AC04> { [	   f,          F,     0x1000192,        0x1000191, U1D453, U1DA0 ] };
++   key <AC05> { [	   g,          G,             g,                G, U1D454, U1D4D ] };
++   key <AC06> { [	   h,          H,             h,                H, U210E,  U2B0 ] };
++   key <AD08> { [	   i,          I,        iacute,           Iacute, U1D456, U2071 ] };
++   key <AC07> { [        j, J,           idiaeresis,   Idiaeresis      ,  U1D457, U2B2] };
++   key <AC08> { [	   k,          K,            oe,               OE, U1D458, U1D4F ] };
++
++   key <AC09> { [	   l,          L,        oslash,         Ooblique, U1D459, U2E1 ] };
++   key <AB07> { [	   m,          M,            mu,               mu, U1D45A, U1D50 ] };
++   key <AB06> { [	   n,          N,        ntilde,           Ntilde, U1D45B, U207F ] };
++   key <AD09> { [	   o,          O,        oacute,           Oacute, U1D45C, U1D52 ] };
++   key <AD10> { [	   p,          P,    odiaeresis,       Odiaeresis, U1D45D, U1D56 ] };
++   key <AD01> { [	   q,          Q,    adiaeresis,       Adiaeresis, U1D45E] };
++   key <AD04> { [	   r,          R,    ediaeresis,       Ediaeresis, U1D45F, U02B3 ] };
++   key <AC02> { [	   s,          S,        ssharp,          section, U1D460, U02E2] };
++   key <AD05> { [	   t,          T,     Greek_tau,            THORN, U1D461, U1D57 ] };
++   key <AD07> { [	   u,          U,        uacute,           Uacute, U1D462, U1D58] };
++   // Weiwu:  U251 is Latin alpha. Greek_ALPHA fell into disuse since it look like "A"
++   key <AB04> { [	   v,          V,   Greek_alpha,             U251, U1D463, U1D5B ] };
++   key <AD02> { [	   w,          W,         aring,            Aring, U1D464, U02B7 ] };
++   key <AB02> { [	   x,          X,      Greek_xi,         Greek_XI, U1D465, U02E3 ] };
++   key <AD06> { [	   y,          Y,    udiaeresis,       Udiaeresis, U1D466, U02B8 ] };
++   key <AB01> { [	   z,          Z,            ae,               AE, U1D467, U1DBB ] };
++   key <AC10> { [ semicolon,      colon,     paragraph,           degree ] };
++   key <AB08> { [     comma,       less,      ccedilla,         Ccedilla ] };
++   key <AB09> { [    period,    greater, dead_abovedot,       dead_caron, periodcentered, ellipsis ] };
++   // Weiwu: was: key <AB10> { [     slash,   question,  questiondown,        dead_hook, ] };
++   // U2215: the division slash, like in 1∕2; U2044: the fraction slash, like in 1⁄2
++   key <AB10> { [     slash,   question,  questiondown,        dead_hook, U2215, U2044] };
++   // Weiwu: was: key <BKSL> { [ backslash,        bar,       notsign,        brokenbar ] };
++   // U2116 is the numero sign №
++   key <BKSL> { [ backslash, bar, dagger, doubledagger, section,  U2116] };
++   key <LSGT> { [ backslash, bar, dagger, doubledagger, section,  U2116] };
++
++
+ // onequarter etc (not in iso8859-15) moved to get three unshifted deadkeys:
++/// Weiwu: the following 3 lines are overridden shortly aftet
+ 
+    key <AE06> { [        6, asciicircum, dead_circumflex, onequarter    ] };
+    key <AE07> { [        7, ampersand,   dead_horn,       onehalf       ] };
+    key <AE08> { [        8, asterisk,    dead_ogonek,     threequarters ] };
+ 
++   key <AE01> { [1,     exclam,    exclamdown,      onesuperior, onesubscript, U207D] };
++   key <AE02> { [2,         at,   dead_doubleacute, twosuperior, twosubscript, U207E] };
++   key <AE03> { [3, numbersign,     dead_macron,  threesuperior, threesubscript, threesuperior ] };
++   // 0x10020bf is “₿” U+20BF Bitcoin Sign Unicode Character
++   key <AE04> { [4,     dollar,             EuroSign, 0x10020bf, foursubscript, foursuperior] };
++   key <AE05> { [5,    percent,            degree, dead_cedilla, fivesubscript, fivesuperior ] };
++   key <AE06> { [6, asciicircum, dead_circumflex,    onequarter, sixsubscript, sixsuperior ] };
++   key <AE07> { [7,  ampersand,              dead_horn, onehalf, sevensubscript, sevensuperior ] };
++   key <AE08> { [8,   asterisk,      dead_ogonek, threequarters, eightsubscript, eightsuperior ] };
++   key <AE09> { [9,  parenleft, leftsinglequotemark, dead_breve, ninesubscript, ninesuperior] };
++   key <AE10> { [0, parenright, rightsinglequotemark, dead_abovering, zerosubscript, zerosuperior ] };
++   // Weiwu: I never use U207B: ⁻ (originally assigned to AE11), nor U208B ₋. 
++   key <AE11> { [     minus, underscore,           yen,    dead_belowdot, U00BA, U00AA ] };
++   key <AE12> { [     equal,       plus,      multiply,         division, U208C, U207A ] };
++
++
+    include "level3(ralt_switch)"
++   include "level5(lwin_switch_lock)"
+ };
+ 
+ // This (altgr-weur) layout is based on combined letter frequencies
