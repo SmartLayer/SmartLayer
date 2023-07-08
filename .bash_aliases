@@ -91,16 +91,19 @@ function ffmpeg2hevc4k {
 	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
 	rm x265_2pass.log x265_2pass.log.cutree
 }
+function ffmpeg2hevc1080p {
+        ffmpeg -y -i "$1" -c:v libx265 -b:v 1200k -x265-params pass=1 -an -f null /dev/null
+        ffmpeg    -i "$1" -c:v libx265 -b:v 1200k -x265-params pass=2 -c:a copy  "$2"
+	rm x265_2pass.log x265_2pass.log.cutree
+}
 function ffmpeg2hevc720p {
         ffmpeg -y -i "$1" -c:v libx265 -b:v  600k -x265-params pass=1 -an -f null /dev/null
         ffmpeg    -i "$1" -c:v libx265 -b:v  600k -x265-params pass=2 -c:a copy  "$2"
-	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
 	rm x265_2pass.log x265_2pass.log.cutree
 }
 function ffmpeg2hevc360p {
         ffmpeg -y -i "$1" -c:v libx265 -b:v  150k -x265-params pass=1 -an -f null /dev/null
         ffmpeg    -i "$1" -c:v libx265 -b:v  150k -x265-params pass=2 -c:a copy  "$2"
-	# ffmpeg -y -i "$1" -c:v libx265 -b:v 2600k -x265-params pass=2 -c:a aac -b:a 128k "$2"
 	rm x265_2pass.log x265_2pass.log.cutree
 }
 function ffmpegcat {
@@ -109,7 +112,7 @@ function ffmpegcat {
 	echo ffmpeg -f concat -safe 0 -i mylist.txt
 	}
 function gify {
-	convert "$1" "$1.gif"; 
+	convert "$1" +dither "$1.gif"; 
 	convert "$1.gif" "$1"; 
 	rm "$1.gif";
 }
@@ -127,12 +130,14 @@ alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/
 alias dropbox_mount="rclone --vfs-cache-mode writes mount Dropbox: ~/Dropbox/"
 alias gdrive_mount="rclone mount --drive-shared-with-me GDrive: ~/GDrive/"
 # echo 3067 1651 60 106
-alias RiverMill='cd ~/"OneDrive/Team/# Projects/- ⭐ RiverMill"'
+alias RiverMill='cd ~/"OneDrive/🇦🇺 Colourful.land Pty Ltd/⭐ RiverMill"'
 alias CGCT.gnucash="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/Accounting/CGCT.gnucash'"
-alias CGCT="cd ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/'"
-alias Palacio="cd ~/'OneDrive/Team/🇪🇸 Palacio Bizcocheros SL'"
+alias CGCT="cd ~/'OneDrive/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/'"
+alias Palacio="cd ~/'OneDrive/🇪🇸 Palacio Bizcocheros SL'"
 alias qq="rm -r ~/.local/homes/qq/.config/tencent-qq/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]; bwrap --dev-bind / / --bind $HOME/.local/homes/qq $HOME --ro-bind $HOME/.Xauthority $HOME/.Xauthority --ro-bind /var/local/trove $HOME/Videos /usr/local/bin/qq"
 alias gnucash_CGCT="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/OneDrive/Businesses/Computer\ Graphic\ and\ Cryptographic\ Technology\ OÜ/Accounting/CGCT.gnucash"
+alias rclone="rclone --vfs-cache-mode writes"
 function pdf_select_pages {
 	qpdf "$1" --pages . "$2" -- "$1".new && mv "$1.new" "$1"
 }
+alias 2560x1440='xrandr --newmode  "2560x1440_60.00"  312.25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync ; xrandr --addmode HDMI1 2560x1440_60.00"'
