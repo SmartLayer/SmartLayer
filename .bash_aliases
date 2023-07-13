@@ -137,6 +137,7 @@ alias Palacio="cd ~/'OneDrive/🇪🇸 Palacio Bizcocheros SL'"
 alias qq="rm -r ~/.local/homes/qq/.config/tencent-qq/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]; bwrap --dev-bind / / --bind $HOME/.local/homes/qq $HOME --ro-bind $HOME/.Xauthority $HOME/.Xauthority --ro-bind /var/local/trove $HOME/Videos /usr/local/bin/qq"
 alias gnucash_CGCT="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/OneDrive/Businesses/Computer\ Graphic\ and\ Cryptographic\ Technology\ OÜ/Accounting/CGCT.gnucash"
 alias rclone="rclone --vfs-cache-mode writes"
+alias pcloudsync='rclone sync --exclude Favourite --delete-after pCloud: /media/weiwu/Seagate\ Expansion\ Drive/pCloud/'
 function pdf_select_pages {
 	qpdf "$1" --pages . "$2" -- "$1".new && mv "$1.new" "$1"
 }
