@@ -130,7 +130,7 @@ alias onedrive_mount="rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive/
 alias dropbox_mount="rclone --vfs-cache-mode writes mount Dropbox: ~/Dropbox/"
 alias gdrive_mount="rclone mount --drive-shared-with-me GDrive: ~/GDrive/"
 # echo 3067 1651 60 106
-alias RiverMill='cd ~/"OneDrive/🇦🇺 Colourful.land Pty Ltd/⭐ RiverMill"'
+alias RiverMill='cd ~/"OneDrive/🇦🇺 Colourful.land Pty Ltd/"'
 alias CGCT.gnucash="LANG=en_AU.UTF-8 LANGUAGE=en gnucash ~/'OneDrive/Team/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/Accounting/CGCT.gnucash'"
 alias CGCT="cd ~/'OneDrive/🇪🇪 Computer Graphic and Cryptographic Technology OÜ/'"
 alias Palacio="cd ~/'OneDrive/🇪🇸 Palacio Bizcocheros SL'"
@@ -142,3 +142,10 @@ function pdf_select_pages {
 	qpdf "$1" --pages . "$2" -- "$1".new && mv "$1.new" "$1"
 }
 alias 2560x1440='xrandr --newmode  "2560x1440_60.00"  312.25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync ; xrandr --addmode HDMI1 2560x1440_60.00"'
+alias oxygen='JAVA_HOME=/usr/lib/jvm/java-17-openjdk-arm64 /opt/oxygen/oxygen.sh '
+
+alias styleless-paste="xclip -o | pandoc -s --no-highlight --self-contained -f markdown -t html | sed 's/<table/<table width=100% border=1/' | tr '\n' '\r' | sed -e 's/<style[^>]*>.*<\/style>//g'| tr '\r' '\n' | xclip -t text/html"
+
+alias "reinstall_firefox"='sudo apt-get purge firefox=1:1snap1-0ubuntu3 ; sudo apt-get install firefox=116.0+build2-0ubuntu0.23.04.1~mt1'
+alias "path2emoji"='sed -e "s|/\$||" -e "s|/|→ |g" -e "s|\.\.|⬆️|g"'
+alias "unicode-monospace"="sed -E -e s/A/𝙰/g -e s/B/𝙱/g -e s/C/𝙲/g -e s/D/𝙳/g -e s/E/𝙴/g -e s/F/𝙵/g -e s/G/𝙶/g -e s/H/𝙷/g -e s/I/𝙸/g -e s/J/𝙹/g -e s/K/𝙺/g -e s/L/𝙻/g -e s/M/𝙼/g -e s/N/𝙽/g -e s/O/𝙾/g -e s/P/𝙿/g -e s/Q/𝚀/g -e s/R/𝚁/g -e s/S/𝚂/g -e s/T/𝚃/g -e s/U/𝚄/g -e s/V/𝚅/g -e s/W/𝚆/g -e s/X/𝚇/g -e s/Y/𝚈/g -e s/Z/𝚉/g -e s/a/𝚊/g -e s/b/𝚋/g -e s/c/𝚌/g -e s/d/𝚍/g -e s/e/𝚎/g -e s/f/𝚏/g -e s/g/𝚐/g -e s/h/𝚑/g -e s/i/𝚒/g -e s/j/𝚓/g -e s/k/𝚔/g -e s/l/𝚕/g -e s/m/𝚖/g -e s/n/𝚗/g -e s/o/𝚘/g -e s/p/𝚙/g -e s/q/𝚚/g -e s/r/𝚛/g -e s/s/𝚜/g -e s/t/𝚝/g -e s/u/𝚞/g -e s/v/𝚟/g -e s/w/𝚠/g -e s/x/𝚡/g -e s/y/𝚢/g -e s/z/𝚣/g -E -e s/0/𝟶/g -e s/1/𝟷/g -e s/2/𝟸/g -e s/3/𝟹/g -e s/4/𝟺/g -e s/5/𝟻/g -e s/6/𝟼/g -e s/7/𝟽/g -e s/8/𝟾/g -e s/9/𝟿/g"
