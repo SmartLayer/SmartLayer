@@ -51,6 +51,8 @@ The `math-friendly-xkb` layout introduces several enhancements:
 
 ## Additional Configuration for Small Keyboards
 
+### 1. Swap ESC key and the tile key ###
+
 For keyboards with a limited number of keys (63 keys), where the upper-left key is often assigned to ESC instead of tilde, you may prefer to have the tilde key for its use in vim and command line operations. To change the ESC key to a tilde, add the following to the section "English (intl., with AltGr dead keys)":
 
 ```bash
@@ -58,6 +60,26 @@ key <ESC> { [    grave, asciitilde,  dead_grave,   dead_tilde, Escape ] };
 ```
 
 This layout is designed to enhance the typing experience for users frequently working with mathematical symbols and expressions. Your feedback and suggestions for improvement are always welcome.
+
+### 2. Use the CAPS key as ISO_Level5_Shift
+
+In this project, we remapped WIN key to ISO_Level5_Shift. If your keyboard lacks a WIN key,  you can repurpose the CAPS key to serve as `ISO_Level5_SHIFT` in just two steps:
+
+1. **Remap the CAPS Key**: Add the following to `/usr/share/X11/xkb/symbols/us`:
+   ```
+   // Swap Caps_Lock and ISO_Level5_Shift
+   key <CAPS> { [ ISO_Level5_Shift ] };
+   key <LVL5> { [ Caps_Lock ] };
+   ```
+
+2. **Restore Caps_Lock Function**: Execute the command:
+   ```
+   xcape -e 'ISO_Level5_Shift=Caps_Lock'
+   ```
+   in your session manager to revert the `Caps_Lock` function to the CAPS key.
+
+**Special Case: Retaining `SUPER_L` Function**
+If you have a Windows key and wish to keep its `SUPER_L` function, remove or comment out the `include "level5(lwin_switch_lock)"` line from the keyboard layout configuration. This line repurposes the Windows key's function.
 
 ## Known Issues
 
