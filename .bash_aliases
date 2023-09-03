@@ -161,7 +161,7 @@ function lsdup {
 
 # upload to a ftp server then return the HTTP address to access that file
 function upload_ann {
-	lftp -c 'connect server2.obble.com.au; put '"$1" && echo -n https://computer.graphic.and.cryptographic.technology/ann/ && echo -n "$1" | jq -sRr @uri
+	lftp -c "connect server2.obble.com.au; put '$1'" && echo -n https://computer.graphic.and.cryptographic.technology/ann/ && echo -n "$1" | jq -sRr @uri
 }
 # this function takes 2 parameters, the pdf file and the page range. It replaces the file with a newer smaller one with only specified pages
 function pdf_select_pages {
@@ -170,7 +170,7 @@ function pdf_select_pages {
 alias 2560x1440='xrandr --newmode  "2560x1440_60.00"  312.25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync ; xrandr --addmode HDMI1 2560x1440_60.00"'
 alias oxygen='JAVA_HOME=/usr/lib/jvm/java-17-openjdk-arm64 /opt/oxygen/oxygen.sh '
 
-alias styleless-paste="xclip -o | pandoc -s --no-highlight --self-contained -f markdown -t html | sed 's/<table/<table width=100% border=1/' | tr '\n' '\r' | sed -e 's/<style[^>]*>.*<\/style>//g'| tr '\r' '\n' | xclip -t text/html"
+alias styleless-paste="xclip -o -selection clipboard | pandoc -s --no-highlight --self-contained -f markdown -t html | sed 's/<table/<table width=100% border=1/' | tr '\n' '\r' | sed -e 's/<style[^>]*>.*<\/style>//g'| tr '\r' '\n' | tee /dev/stderr | xclip -selection clipboard -t text/html"
 alias youtube-dl="python3 ~/Projects/youtube-dl/youtube_dl/__main__.py"
 alias "reinstall_firefox"='sudo apt-get purge firefox=1:1snap1-0ubuntu3 ; sudo apt-get install firefox=116.0+build2-0ubuntu0.23.04.1~mt1'
 alias "path2emoji"='sed -e "s|/\$||" -e "s|/|→ |g" -e "s|\.\.|⬆️|g"'
