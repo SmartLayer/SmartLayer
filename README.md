@@ -63,7 +63,7 @@ This layout is designed to enhance the typing experience for users frequently wo
 
 ### 2. Use the CAPS key as ISO_Level5_Shift
 
-In this project, we remapped LWIN key (Left Windows) to ISO_Level5_Shift. If your keyboard lacks a WIN key,  you can repurpose the CAPS key to serve as `ISO_Level5_SHIFT` using a feature called tap-hold pattern, which means a key function differently when it is tapped then when it is held in combination of another key. You can do so through 2 simple steps, 
+In this project, we remapped LWIN key (Left Windows) to ISO_Level5_Shift. If your keyboard lacks a WIN key,  you can repurpose the CAPS key to serve as `ISO_Level5_Shift` using a feature called tap-hold pattern, which means a key function differently when it is tapped then when it is held in combination of another key. You can do so through 2 simple steps, 
 
 1. **Remap the CAPS Key**: Add the following to `/usr/share/X11/xkb/symbols/us`:
    ```
@@ -83,8 +83,7 @@ In this project, we remapped LWIN key (Left Windows) to ISO_Level5_Shift. If you
 **Special Case: Retaining `SUPER_L` Function**
 If you have a Windows key and wish to keep its `SUPER_L` function, remove or comment out the `include "level5(lwin_switch_lock)"` line from the keyboard layout configuration. This line repurposes the Windows key's function.
 
-**Can this be done with programmable keyboard?**
-
+**Can this be done with a programmable keyboard?**
 Instead of mapping LWIN as ISO_Level5_Shift, you might consider program a keyboard to use a special key to do it.
 
 In the file `/usr/share/X11/xkb/keycodes/evdev` on many Linux distributions, you'll find the following mapping:
@@ -103,7 +102,7 @@ If your keyboard firmware supports a tap-and-hold feature natively, you could pr
 
 While the `math-friendly-xkb` layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
 
-- **Superscript Minus**: Currently, there is no superscript minus symbol. This is rarely an issue as superscripts are often used for elliptic curve math, which primarily involves addition. However, it could be argued that the cardinal number signs should not be there, as superscript O, and superscript A does the job for muscular and femine cardinal, the unicode specifically for these 2 symbols are arguably overdsigned.
+- **Superscript Minus**: Currently, there is no superscript minus symbol, because muscular and feminine cardinal is where you would expect superscript minus. This is rarely an issue as superscripts are often used for elliptic curve math, which primarily involves addition. In reality, superscript O **ᵒ**, and superscript A **ᵃ** can be used for muscular and feminine cardinal **º** and **ª**, the unicode specifically for these 2 symbols are arguably overdsigned.
 
 - **Trademark and Registered Symbols**: There are currently no mappings for the 'trademark' or 'registered' symbols. One potential solution is to use `alt+shift+'1'` for the trademark symbol and `alt+shift+'2'` for the registered symbol, as there are two ways to produce superscript brackets.
 
