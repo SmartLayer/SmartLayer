@@ -161,8 +161,12 @@ function lsdup {
 
 # upload to a ftp server then return the HTTP address to access that file
 function upload_ann {
-	lftp -c "connect server2.obble.com.au; put '$1'" && echo -n https://computer.graphic.and.cryptographic.technology/ann/ && echo -n "$1" | jq -sRr @uri
+    for file in "$@"; do
+        filename=`basename "$file"`
+        lftp -c "connect server2.obble.com.au; put '$file'" && echo -n https://computer.graphic.and.cryptographic.technology/ann/ && echo -n "$filename" | jq -sRr @uri
+    done
 }
+
 # this function takes 2 parameters, the pdf file and the page range. It replaces the file with a newer smaller one with only specified pages
 function pdf_select_pages {
 	qpdf "$1" --pages . "$2" -- "$1".new && mv "$1.new" "$1"
