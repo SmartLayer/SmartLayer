@@ -1,0 +1,15 @@
+--- ubuntu-23.04.us	2023-09-10 17:43:18.114064795 +0200
++++ /usr/share/X11/xkb/symbols/us	2023-09-10 17:43:13.502376926 +0200
+@@ -985,6 +985,12 @@
+    include "us(intl)"
+    name[Group1]= "English (intl., with AltGr dead keys)";
+    key.type="EIGHT_LEVEL";
++   // Swap Caps_Lock and ISO_Level5_Shift
++   key <CAPS> { [ ISO_Level5_Shift ] };
++   key <RWIN> { [ Caps_Lock ] };
++
++   // Then "xcape -e 'ISO_Level5_Shift=Caps_Lock'" to return the function of
++   // Caps_Lock back to CAPS key. Do it in your own session manager.
+ 
+ // five dead keys moved into level3:
+ 

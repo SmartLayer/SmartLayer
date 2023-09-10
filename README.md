@@ -45,7 +45,7 @@ The `math-friendly-xkb` introduces several enhancements beyond the original "Eng
 
 ## Additional Configuration for Small Keyboards
 
-### 1. Swap ESC key and the tile key ###
+### 1. Swap ESC key and the tile key with `swap_esc_tlde.diff` ###
 
 For keyboards with a limited number of keys (63 keys), where the upper-left key is often assigned to ESC instead of tilde, you may prefer to have the tilde key for its use in vim and command line operations. To change the ESC key to a tilde, add the following to the section "English (intl., with AltGr dead keys)":
 
@@ -55,7 +55,7 @@ key <ESC> { [    grave, asciitilde,  dead_grave,   dead_tilde, Escape ] };
 
 This layout is designed to enhance the typing experience for users frequently working with mathematical symbols and expressions. Your feedback and suggestions for improvement are always welcome.
 
-### 2. Use the CAPS key as ISO_Level5_Shift
+### 2. Use the CAPS key as ISO_Level5_Shift with `swap_caps_level5_shift.diff`
 
 In this project, we remapped LWIN key (Left Windows) to ISO_Level5_Shift. If your keyboard lacks a WIN key,  you can repurpose the CAPS key to serve as `ISO_Level5_Shift` using a feature called tap-hold pattern, which means a key function differently when it is tapped then when it is held in combination of another key. You can do so through 2 simple steps, 
 
