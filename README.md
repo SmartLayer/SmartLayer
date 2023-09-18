@@ -1,12 +1,30 @@
-# Math-Friendly XKB
+# MathLingua-Layout: An XKB Keyboard Layout for Math-Symbol Typing Ployglots
 
-Welcome to the `math-friendly-xkb` repository. This project offers a customized version of the "English (intl., with AltGr dead keys)" keyboard layout for Linux users. The layout is optimized for typing mathematical symbols and expressions without compromising the original layout's capabilities[^microsoft]. It's designed as a diff file against the `/usr/share/X11/xkb/symbols/us` file that comes with Ubuntu, replacing the "English (intl., with AltGr dead keys)" layout directly. The repository is updated with every Ubuntu LTS release.
+Welcome to the MathLingua-Layout repository. This project is dedicated to providing a unique keyboard layout tailored for Linux users, specifically for the XKB system. Our layout is designed to bridge the gap between mathematical typing, multi-lingual capabilities, and the familiarity of the standard US keyboard layout.
 
-You can find the latest diff file as ubuntu-22.04.diff (for Ubuntu 22.04).
+## The Problem
+
+While there are numerous keyboard layouts optimized for polyglot European users, especially those from Western Europe, many of these layouts deviate significantly from the standard US keyboard. This deviation often requires users to unlearn and relearn key placements, leading to inefficiencies and frustrations. Furthermore, many existing keyboards offer mathematical capabilities but lack multi-lingual support such as typing in Italian. This limitation is particularly glaring given Italy's rich history as the birthplace of European mathematics during the Renaissance.
+
+## The Solution
+
+MathLingua-Layout is our answer to these challenges. At its core, it retains the intuitive design of the US keyboard, ensuring that users don't have to unlearn anything. Every symbol and letter functions exactly like the US keyboard. However, it goes beyond by offering up to seven levels of key functions, allowing for a vast array of symbols and characters. This is a significant enhancement over most layouts which typically offer a maximum of four levels.
+
+## Introduction
+
+This layout is a modification of the "English (intl., with AltGr dead keys)" keyboard layout, originally developed by Microsoft. It's optimized for typing mathematical symbols and expressions without compromising the original layout's multi-lingual capabilities[^microsoft]. The layout is designed as a diff file against the `/usr/share/X11/xkb/symbols/us` file that comes with Ubuntu, replacing the "English (intl., with AltGr dead keys)" layout directly. The repository is updated with every Ubuntu LTS release.
 
 [^microsoft]: The "English (intl., with AltGr dead keys)" layout, originally developed by Microsoft, enables typing in virtually any Latin-based script. It is specifically optimized for Spanish and French, designed to minimize the use of dead keys. Only a few words, such as "bilingüe" (bilingual in Spanish), require the use of dead keys. 
 
 ## Features
+
+- **No unlearning**: No symbol changed from the popular US English QWERTY layout.
+- **Seven-Level Keyboard**: Most keys can produce up to seven distinct symbols, organized into four columns.
+- **Currencies**: Enhanced currency support including the Euro (€) and Bitcoin (₿) symbols.
+- **Greek Letters**: Incorporates frequently used Greek letters like α and ξ, more to come.
+- **Italic Letters**: Introduces an Italic variant for every English alphabet letter, represented in Unicode. Used in "let 𝑥 be 0".
+- **Subscript & Superscript**: Offers superscript digits, letters, and operators, plus subscript digits.
+- **Additional Symbols**: Incorporates a range of symbols from slashes to note symbols, catering to diverse typing needs.
 
 This is a seven-level keyboard, meaning that each key on the keyboard can produce up to seven symbols.
 
@@ -33,7 +51,7 @@ These symbols are organized into 4 columns. The first column of symbols is gener
 
 ````
 
-The `math-friendly-xkb` introduces several enhancements beyond the original "English (intl., with AltGr dead keys)" layout it was based on:
+The layout introduces several enhancements beyond the original "English (intl., with AltGr dead keys)" layout it was based on:
 
 - **Currencies**. The 'currency' symbol has been replaced with the Euro Sign (€). Use `<alt> + <4>` to type this symbol.  The Bitcoin symbol (₿) can be typed using `<alt> + <shift> + <4>`.
 - **Greek Letters**: The layout includes α and ξ, two frequently used Greek letters in mathematics. Future updates may include additional Greek letters based on usage frequency.
@@ -96,7 +114,7 @@ If your keyboard firmware supports a tap-and-hold feature natively, you could pr
 
 ## Known Issues
 
-While the `math-friendly-xkb` layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
+While the layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
 
 - **Superscript Minus**: Currently, there is no superscript minus symbol, because muscular and feminine cardinal is where you would expect superscript minus. This is rarely an issue as superscripts are often used for elliptic curve math, which primarily involves addition.
 - **Trademark and Registered Symbols**: There are currently no mappings for the 'trademark' or 'registered' symbols. One potential solution is to use `alt+shift+'1'` for the trademark symbol and `alt+shift+'2'` for the registered symbol, as there are two ways to produce superscript brackets.
@@ -112,7 +130,7 @@ These issues are minor and do not significantly impact the overall functionality
 - The Latin Alpha (ɑ) and Copyright (©) symbols have not seen much real life uses. Pity.
 - The combination `super+shift+'q'` produces nothing, because there is no Unicode code point for superscript q, it just doesn't exist. Also, nothing happens with `super` plus period or comma.
 
-## Helpful hint
+## Helpful Knowledge
 
 To get the Unicode point of a character, use this command:
 ````
