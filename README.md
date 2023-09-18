@@ -34,8 +34,10 @@ These symbols are organized into 4 columns. The first column of symbols is gener
 
 ## Usage
 
+This table only covers the usage of additions to The "English (intl., with AltGr dead keys)" layout.
+
 | Symbol Name                  | How to Type Them                      | Examples                                                           |
-|-----------------------------|---------------------------------------|----------------------------------------------------------------------|
+|-----------------------------|---------------------------------------|---------------------------------------------------------------------|
 | Euro Sign (€)               | <kbd>AltGr</kbd> + <kbd>4</kbd>         | "The price is €50."                                                  |
 | Bitcoin (₿)                 | <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> | "The current value of Bitcoin is ₿1 = $40,000."                       |
 | Greek Letters (α, ξ)        | (Based on key mapping)                | "The angle α is 60°." "The variable ξ represents..."                  |
@@ -46,8 +48,9 @@ These symbols are organized into 4 columns. The first column of symbols is gener
 | Fractional Slash (⁄)        | <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>1</kbd> | "The ratio is 1⁄4." "The fraction 1⁄7 represents..."                    |
 | Note Symbols† (†, ‡, §, ‖, ¶)| (Based on key mapping)                | "Refer to the note†." "See the section‡." "Paragraph starts with¶."  |
 | Numero Symbol (№)          | <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>\\</kbd> | "Product №12345."                                                    |
-| Cardinal Signs (º, ª)       | <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> and <kbd>Win</kbd> + <kbd>-</kbd> | "1º lugar." "2ª posición."                                          |
-| Degree Sign (°)             | <kdb>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>0</kbd>                | "The temperature is 25°." "Calle Mayor 10°, Madrid."                 |
+| Cardinal Signs (º, ª)       | <kbd>Win</kbd> + <kbd>-</kbd> and <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> | "1º lugar." "2ª posición."                                          |
+| Degree Sign (°)             | <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>0</kbd>                | "The temperature is 25°." "Calle Mayor 10°, Madrid."                 |
+| Registered Trademark (®) and Trademark (™) | <kbd>AltGr</kbd> + <kbd>v</kbd>, <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>v</kbd>                |  Enron®'s NewProduct™              |
 
 † **Note Symbols**: The first four traditional order of [note symbols](https://en.wikipedia.org/wiki/Note_(typography)) in English have been added. The traditional order of these symbols in English is [*](https://en.wikipedia.org/wiki/Asterisk), [†](https://en.wikipedia.org/wiki/Dagger_(typography)), [‡](https://en.wikipedia.org/wiki/Double_dagger_(typography)), [§](https://en.wikipedia.org/wiki/Section_sign), [‖](https://en.wikipedia.org/wiki/Vertical_Bar), [¶](https://en.wikipedia.org/wiki/Pilcrow). The first exists on standard keyboards, the section sign § and the pilcrow sign ¶ existed in "English (intl., with AltGr dead keys)", this project piles the rest 3 symbols on the backslash key.
 
@@ -114,16 +117,16 @@ If your keyboard firmware supports a tap-and-hold feature natively, you could pr
 While the layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
 
 - **Superscript Minus**: Currently, there is no superscript minus symbol, because muscular and feminine cardinal is where you would expect superscript minus. This is rarely an issue as superscripts are often used for elliptic curve math, which primarily involves addition.
-- **Trademark and Registered Symbols**: There are currently no mappings for the 'trademark' or 'registered' symbols. One potential solution is to use `alt+shift+'1'` for the trademark symbol and `alt+shift+'2'` for the registered symbol, as there are two ways to produce superscript brackets.
-- **Degree Sign**: There are 2 ways to produce the degree sign (°). Alt+shift+0 typed twice is sufficient for this symbol, so the one on number key 5 is not really needed. This is inherited from "English (intl., with AltGr dead keys)" layout.
-- **Unused Alt Key Combinations**: The combinations `alt+g`, `alt+shift+g`, `alt+h`, `alt+shift+h`, and `alt+m` and `alt+shift+m` currently do not produce any special symbols.
+- **Unused Alt Key Combinations**: The combinations `alt+g`, `alt+shift+g` and `alt+m` and `alt+shift+m` currently do not produce any special symbols.
+- **Insufficient Greek letters**. One suggestion was there should be enough Greek letters to denote the SARS-CoV-2 variants, but there were just too many of them.
 
-These issues are minor and do not significantly impact the overall functionality of the layout. However, they will be considered for future updates and improvements.
+These issues will be considered for future updates and improvements.
 
 ## It's a feature, not a bug
 
 - Superscript O **ᵒ**, and superscript A **ᵃ** can be used for muscular and feminine cardinal **º** and **ª**, so having all of them on a keyboard layout is appears overdsigned. However, often cardinal numbers have underscores in certain fonts, they are visually not replaceable for each other. People who speaks Spanish or Portuguese can tell.
-- Usually capital N followed by muscular cardinal º, when typed together like this Nº, suffices as a substitute of Numero sign №. We kept both anyway because the Numero Sign is special.
+- **Degree Sign**: There are many signs that resemble the look of Degree Sign. The one on number key 5 is the "One True Degree Sign". However, Alt+shift+0 typed twice result in ° which is very similar to the degree sign °. This is inherited from "English (intl., with AltGr dead keys)" layout, and the difference is that the latter is actually the circle on top of Ů. Alternatively, muscular cardinal sign and superscript letter O both look like degree sign, but they are for different purposes.
+- Usually capital N followed by muscular cardinal º, when typed together like this Nº, suffices as a substitute of Numero sign №. We kept both anyway.
 - The Latin Alpha (ɑ) and Copyright (©) symbols have not seen much real life uses. Pity.
 - The combination `super+shift+'q'` produces nothing, because there is no Unicode code point for superscript q, it just doesn't exist. Also, nothing happens with `super` plus period or comma.
 
@@ -137,4 +140,4 @@ U+0000
 U+07A5
 U+0001
 ````
-This shows that 𐞥 is U107A5.
+This shows that 𐞥 is U107A5. You can use this trick to get the unicode codepoint for everything mentioned in this document.
