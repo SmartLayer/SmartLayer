@@ -62,6 +62,15 @@ The layout introduces several enhancements beyond the original "English (intl., 
 - **A Lot of Slashes**: Division slash (∕) and fraction slash (⁄) symbols have been added.
 - **Note Symbols**: The first four traditional order of [note symbols](https://en.wikipedia.org/wiki/Note_(typography)) in English have been added. The traditional order of these symbols in English is [*](https://en.wikipedia.org/wiki/Asterisk), [†](https://en.wikipedia.org/wiki/Dagger_(typography)), [‡](https://en.wikipedia.org/wiki/Double_dagger_(typography)), [§](https://en.wikipedia.org/wiki/Section_sign), [‖](https://en.wikipedia.org/wiki/Vertical_Bar), [¶](https://en.wikipedia.org/wiki/Pilcrow). The first exists on standard keyboards, the section sign § and the pilcrow sign ¶ existed in "English (intl., with AltGr dead keys)", this project piles the rest 3 symbols on the backslash key.
 - **Numero symbol and cardinal signs**: These are frequently used in Europe.
+ 
+## Installation
+
+For Ubuntu 23.04:
+1. Replace `/usr/share/X11/xkb/symbols/us` with `ubuntu-23.04.us`.
+2. In X11, select the "English (intl., with AltGr dead keys)" layout.
+3. For Wayland users, configure the layout within your Wayland compositor settings.
+
+This layout supersedes the original "English (intl., with AltGr dead keys)". While a dedicated OS package would be ideal, none currently exists. For other Linux versions or X11, apply `ubuntu-23.04.diff` to `/usr/share/X11/xkb/symbols/us` using the patch command.
 
 ## Additional Configuration for Small Keyboards
 
