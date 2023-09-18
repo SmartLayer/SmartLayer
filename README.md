@@ -1,6 +1,6 @@
 # MathLingua-Layout: An XKB Keyboard Layout for Math-Symbol Typing Polyglots
 
-Welcome to the MathLingua-Layout repository. This project is dedicated to providing a unique keyboard layout tailored for Linux users, specifically for the XKB system. Our layout is designed to bridge the gap between mathematical typing, multi-lingual capabilities, and the familiarity of the standard US keyboard layout.
+Welcome to the MathLingua-Layout repository. This project is dedicated to providing a unique keyboard layout tailored for Linux (and *nix) users, specifically for the XKB system. Our layout is designed to bridge the gap between mathematical typing, multi-lingual capabilities, and the familiarity of the standard US keyboard layout.
 
 ## The Problem
 
@@ -58,9 +58,9 @@ This table only covers the usage of additions to The "English (intl., with AltGr
 | Superscript Letters         | <kbd>Shift</kbd> + <kbd>Super</kbd> + [letter] | "The variable 𝑦ᵃ represents..."                                      |
 | Fractional Slash (⁄)        | <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>1</kbd> | "The ratio is 1⁄4." "The fraction 1⁄7 represents..."                    |
 | Note Symbols† (†, ‡, §, ‖, ¶)| (Based on key mapping)                | "Refer to the note†." "See the section‡." "Paragraph starts with¶."  |
-| Numero Symbol (№)          | <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>\\</kbd> | "Product №12345."                                                    |
-| Cardinal Signs (º, ª)       | <kbd>Win</kbd> + <kbd>-</kbd> and <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> | "1º lugar." "2ª posición."                                          |
-| Degree Sign (°)             | <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>0</kbd>                | "The temperature is 25°." "Calle Mayor 10°, Madrid."                 |
+| Numero Symbol (№)          | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>\\</kbd> | "Product №12345."                                                    |
+| Cardinal Signs (º, ª)       | <kbd>Super</kbd> + <kbd>-</kbd> and <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> | "1º lugar." "2ª posición."                                          |
+| Degree Sign (°)             | <kbd>AltGr</kbd> + <kbd>5</kbd>                | "The temperature is 25°." "Calle Mayor 10°, Madrid."                 |
 | Registered Trademark (®) and Trademark (™) | <kbd>AltGr</kbd> + <kbd>v</kbd>, <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>v</kbd>                |  Enron®'s NewProduct™              |
 
 † **Note Symbols**: The first four traditional order of [note symbols](https://en.wikipedia.org/wiki/Note_(typography)) in English have been added. The traditional order of these symbols in English is [*](https://en.wikipedia.org/wiki/Asterisk), [†](https://en.wikipedia.org/wiki/Dagger_(typography)), [‡](https://en.wikipedia.org/wiki/Double_dagger_(typography)), [§](https://en.wikipedia.org/wiki/Section_sign), [‖](https://en.wikipedia.org/wiki/Vertical_Bar), [¶](https://en.wikipedia.org/wiki/Pilcrow). The first exists on standard keyboards, the section sign § and the pilcrow sign ¶ existed in "English (intl., with AltGr dead keys)", this project piles the rest three symbols on the backslash key.
@@ -88,8 +88,8 @@ These issues will be considered for future updates and improvements.
 
 ## It's a feature, not a bug
 
-- Superscript O **ᵒ**, and superscript A **ᵃ** can be used for muscular and feminine cardinal **º** and **ª**, so having all of them on a keyboard layout appears overdsigned. However, cardinal numbers have underscores in certain fonts; they are visually not replaceable for each other. People who speak Spanish or Portuguese can tell.
-- Degree Sign: Several symbols resemble the Degree Sign. The authentic Degree Sign is located on the number key 5. Pressing <kbd>Alt</kbd>+<kbd>shift</kbd>+<kbd>0</kbd> twice produces the symbol °, which closely resembles the Degree Sign. However, it's the circle atop the letter Ů. While the muscular cardinal sign and the superscript letter O may also appear similar to the Degree Sign, they serve different functions.
+- Superscript `o` **ᵒ**, and superscript `a` **ᵃ** can be used for muscular and feminine cardinal **º** and **ª**, so having all of them on a keyboard layout appears over-designed. However, cardinal numbers have underscores in certain fonts; they are visually not replaceable for each other. People who speak Spanish or Portuguese can tell.
+- Degree Sign: Several symbols resemble the Degree Sign. The authentic Degree Sign is located on the number key 5. Pressing <kbd>Alt</kbd>+<kbd>shift</kbd>+<kbd>0</kbd> twice produces the symbol °, which closely resembles the Degree Sign. However, it's the circle atop the letter Ů. While the muscular cardinal sign and the superscript letter `o` may also appear similar to the Degree Sign, they serve different functions.
 - Usually, capital N followed by muscular cardinal º, when typed together like this Nº, suffices as a substitute for Numero sign №. We kept both anyway.
 - The Latin Alpha (ɑ) and Copyright (©) symbols have little real-life uses. Pity.
 
