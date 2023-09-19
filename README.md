@@ -57,6 +57,8 @@ This table only covers the usage of additions to The "English (intl., with AltGr
 | Superscript Numbers (e.g., ⁴)| <kbd>Shift</kbd> + <kbd>Super</kbd> + [digit] | "The value is 𝑥⁴."                                                   |
 | Superscript Letters         | <kbd>Shift</kbd> + <kbd>Super</kbd> + [letter] | "The variable 𝑦ᵃ represents..."                                      |
 | Fractional Slash (⁄)        | <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>1</kbd> | "The ratio is 1⁄4." "The fraction 1⁄7 represents..."                    |
+| Big Solidus (⧸)        | <kbd>Super</kbd> + <kbd>/</kbd> | "Business Profile꞉ P⧸U Pty Ltd.pdf" (replaces slash in filenames)                    |
+| Modifier Letter Colon (꞉)        | <kbd>AltGr</kbd> + <kbd>;</kbd> | "Business Profile꞉ P⧸U Pty Ltd.pdf" (replaces colon in filenames)                 |
 | Note Symbols† (†, ‡, §, ‖, ¶)| (Based on key mapping)                | "Refer to the note†." "See the section‡." "Paragraph starts with¶."  |
 | Numero Symbol (№)          | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>\\</kbd> | "Product №12345."                                                    |
 | Cardinal Signs (º, ª)       | <kbd>Super</kbd> + <kbd>-</kbd> and <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> | "1º lugar." "2ª posición."                                          |
