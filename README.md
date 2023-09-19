@@ -19,6 +19,7 @@ This layout is a modification of the "English (intl., with AltGr dead keys)" key
 ## Features
 
 - **No unlearning**: No symbol changed from the popular US English QWERTY layout.
+- **No use of dead keys for many European languages**: If you type English, Spanish, German, Swedish, Danish, Norwegian or Icelandic, you don't need to use dead keys. Other languages, such as French, still need dead keys.
 - **Seven-Level Keyboard**: Most keys can produce up to seven distinct symbols organized into four columns.
 - **Currencies**: Enhanced currency support including the Euro (€) and Bitcoin (₿) symbols.
 - **Greek Letters**: Incorporates frequently used Greek letters like α and ξ, more to come.
