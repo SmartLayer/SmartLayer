@@ -77,6 +77,17 @@ For Ubuntu 23.04:
 
 This layout supersedes the original "English (intl., with AltGr dead keys)". While a dedicated OS package would be ideal, none currently exists. For other Linux versions or X11, apply `ubuntu-23.04.diff` to `/usr/share/X11/xkb/symbols/us` using the patch command.
 
+This is done by first going into the directory, then run patch with the input being the diff file corrisponding to your Linux distribution, or the version most near to it. Try a dry run first:
+
+    $ cd /usr/share/X11/xkb/symbols
+    $ sudo patch --dry-run --force < ~/code/MathLingua-Layout/ubuntu-23.04.diff
+
+After the dry run, if it shows no errors, do a real run:
+
+    $ sudo patch --force < ~/code/MathLingua-Layout/ubuntu-23.04.diff
+
+Once this is done, don't forget to go to Gnome Settings, choose Keyboard and choose "English (intl., with AltGr dead keys)".
+
 There are [additional instructions](SMALL-KEYBOARDS.md) if you need a special configuration for small keyboards.
 
 ## Known Issues
