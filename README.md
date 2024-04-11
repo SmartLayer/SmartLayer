@@ -1,22 +1,22 @@
-| | | |
-|:---:|:---:|:---:|
-| | **For the SmartLayer blockchain technology, visit [Smart Token Labs](https://github.com/SmartTokenLabs)** | |
+# For the SmartLayer blockchain technology, visit [Smart Token Labs](https://github.com/SmartTokenLabs)
 
 ---
 
-# SmartLayer: A 7-Layered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
+The following is a keyboard project unrelated to the blockchain technology.
+
+## SmartLayer: A 7-Layered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
 
 Welcome to the SmartLayer repository. This project is dedicated to providing a unique keyboard layout that seamlessly combines multi-lingual typing, efficient math symbol input, and the familiarity of the standard US keyboard layout. SmartLayer is designed to enhance productivity for users who frequently type in multiple languages and require quick access to a wide range of mathematical symbols, all while maintaining a minimal learning curve.
 
-## The Problem
+### The Problem
 
 While numerous keyboard layouts are optimized for polyglot European users, especially those from Western Europe, many of these layouts deviate from the standard US keyboard. This deviation often requires users to unlearn and relearn key placements, leading to inefficiencies and frustrations. Furthermore, many existing keyboards offer mathematical capabilities but, in doing so, reduce their multi-lingual support.
 
-## The Solution
+### The Solution
 
 At its core, this layout retains the intuitive design of the US keyboard, ensuring that users don't have to unlearn anything. Every symbol and letter functions exactly like the US keyboard. However, it goes beyond by offering up to seven levels of symbols for most keys, allowing for a vast array of symbols and characters. This is a significant enhancement over most layouts, which typically offer a maximum of four levels. Dead key as a necessary evil is introduced, but only on the 3rd layer; therefore, it doesn't affect the typing of English, Spanish or German, but other languages like French and Italian would involve using dead keys.
 
-## Introduction
+### Introduction
 
 The SmartLayer is a unique keyboard layout designed to bridge the gap between mathematical typing, multi-lingual capabilities, and familiarity with the standard US keyboard layout.
 
@@ -24,7 +24,7 @@ At its core, this layout retains the intuitive design of the US keyboard, ensuri
 
 The layout introduces the dead key as a necessary evil, but only on the 3rd layer. This design choice ensures that typing in English, Spanish, or German remains unaffected, while other languages like French and Italian would involve using dead keys.
 
-## Features
+### Features
 
 - **No unlearning**: No symbol changed from the popular US English QWERTY layout.
 - **No use of dead keys for many European languages**: If you type English, Spanish, German, Swedish, Danish, Norwegian or Icelandic, you don't need to use dead keys. Other languages, such as French, still need dead keys.
@@ -52,7 +52,7 @@ These symbols are organized into four columns in this chart:
 | 7     | Super + AltGr             | Forth Column lower | ᵃ |
 | 8     | Super + AltGr + Shift     | Not Defined. No one likes pressing 4 keys together| |
 
-## Usage
+### Usage
 
 This table only covers the usage of additions to The "English (intl., with AltGr dead keys)" layout.
 
@@ -76,7 +76,7 @@ This table only covers the usage of additions to The "English (intl., with AltGr
 
 † **Note Symbols**: The first four traditional order of [note symbols](https://en.wikipedia.org/wiki/Note_(typography)) in English have been added. The traditional order of these symbols in English is [*](https://en.wikipedia.org/wiki/Asterisk), [†](https://en.wikipedia.org/wiki/Dagger_(typography)), [‡](https://en.wikipedia.org/wiki/Double_dagger_(typography)), [§](https://en.wikipedia.org/wiki/Section_sign), [‖](https://en.wikipedia.org/wiki/Vertical_Bar), [¶](https://en.wikipedia.org/wiki/Pilcrow). The first exists on standard keyboards, the section sign § and the pilcrow sign ¶ existed in "English (intl., with AltGr dead keys)", this project piles the rest three symbols on the backslash key.
 
-## Implementation
+### Implementation
 
 In this repository, we provide implementations of the SmartLayer for Linux and *nix systems using the XKB system.
 
@@ -88,7 +88,7 @@ To use the SmartLayer on your Linux/*nix system, follow the installation instruc
 
 [^microsoft]: The "English (intl., with AltGr dead keys)" layout, originally developed by Microsoft, enables typing in virtually any Latin-based script. It is optimised explicitly for Spanish and French, designed to minimize the use of dead keys. Only a few words, such as "bilingüe" (bilingual in Spanish), require the use of dead keys. 
 
-## Installation
+### Installation
 
 For Ubuntu 23.04:
 1. Replace `/usr/share/X11/xkb/symbols/us` with `ubuntu-23.04.us`.
@@ -110,7 +110,7 @@ Once this is done, don't forget to go to Gnome Settings, choose Keyboard and cho
 
 There are [additional instructions](SMALL-KEYBOARDS.md) if you need a special configuration for small keyboards.
 
-## Known Issues
+### Known Issues
 
 While the layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
 
@@ -120,7 +120,7 @@ While the layout aims to enhance the typing experience, there are a few known is
 
 These issues will be considered for future updates and improvements.
 
-## It's a feature, not a bug
+### It's a feature, not a bug
 
 - Superscript `o` **ᵒ**, and superscript `a` **ᵃ** can be used for muscular and feminine cardinal **º** and **ª**, so having all of them on a keyboard layout appears over-designed. However, cardinal numbers have underscores in certain fonts; they are visually not replaceable for each other. People who speak Spanish or Portuguese can tell.
 - Degree Sign: Several symbols resemble the Degree Sign. The authentic Degree Sign is located on the number key 5. Pressing <kbd>Alt</kbd>+<kbd>shift</kbd>+<kbd>0</kbd> twice produces the symbol °, which closely resembles the Degree Sign. However, it's the circle atop the letter Ů. While the muscular cardinal sign and the superscript letter `o` may also appear similar to the Degree Sign, they serve different functions.
@@ -128,7 +128,7 @@ These issues will be considered for future updates and improvements.
 - The Latin Alpha (ɑ) and Copyright (©) symbols have little real-life uses. Pity.
 
 
-## Helpful Knowledge
+### Helpful Knowledge
 
 To get the Unicode point of a character, use this command:
 ````
