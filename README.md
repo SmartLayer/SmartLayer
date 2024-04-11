@@ -4,17 +4,19 @@ Welcome to the MathLingua-Layout repository. This project is dedicated to provid
 
 ## The Problem
 
-While numerous keyboard layouts are optimized for polyglot European users, especially those from Western Europe, many of these layouts deviate from the standard US keyboard. This deviation often requires users to unlearn and relearn key placements, leading to inefficiencies and frustrations. Furthermore, many existing keyboards offer mathematical capabilities but lack multi-lingual support, such as typing in Italian. This limitation is particularly glaring given Italy's rich history as the birthplace of European mathematics during the Renaissance.
+While numerous keyboard layouts are optimized for polyglot European users, especially those from Western Europe, many of these layouts deviate from the standard US keyboard. This deviation often requires users to unlearn and relearn key placements, leading to inefficiencies and frustrations. Furthermore, many existing keyboards offer mathematical capabilities but, in doing so, reduce their multi-lingual support.
 
 ## The Solution
 
-MathLingua-Layout is our answer to these challenges. At its core, it retains the intuitive design of the US keyboard, ensuring that users don't have to unlearn anything. Every symbol and letter functions exactly like the US keyboard. However, it goes beyond by offering up to seven levels of key functions, allowing for a vast array of symbols and characters. This is a significant enhancement over most layouts, which typically offer a maximum of four levels.
+At its core, this layout retains the intuitive design of the US keyboard, ensuring that users don't have to unlearn anything. Every symbol and letter functions exactly like the US keyboard. However, it goes beyond by offering up to seven levels of symbols for most keys, allowing for a vast array of symbols and characters. This is a significant enhancement over most layouts, which typically offer a maximum of four levels. Dead key as a necessary evil is introduced, but only on the 3rd layer; therefore, it doesn't affect the typing of English, Spanish or German, but other languages like French and Italian would involve using dead keys.
 
 ## Introduction
 
-This layout is a modification of the "English (intl., with AltGr dead keys)" keyboard layout, originally developed by Microsoft. It's optimized for typing mathematical symbols and expressions without compromising the original layout's multi-lingual capabilities[^microsoft]. The layout is designed as a diff file against the `/usr/share/X11/xkb/symbols/us` file that comes with Ubuntu, replacing the "English (intl., with AltGr dead keys)" layout directly. The repository is updated with every Ubuntu LTS release.
+The MathLingua-Layout is a unique keyboard layout designed to bridge the gap between mathematical typing, multi-lingual capabilities, and familiarity with the standard US keyboard layout.
 
-[^microsoft]: The "English (intl., with AltGr dead keys)" layout, originally developed by Microsoft, enables typing in virtually any Latin-based script. It is specifically optimized for Spanish and French, designed to minimize the use of dead keys. Only a few words, such as "bilingüe" (bilingual in Spanish), require the use of dead keys. 
+At its core, this layout retains the intuitive design of the US keyboard, ensuring that users don't have to unlearn anything. Every symbol and letter functions exactly like the US keyboard. However, it goes beyond by offering up to seven levels of symbols for most keys, allowing for a vast array of symbols and characters. This is a significant enhancement over most layouts, which typically offer a maximum of four levels.
+
+The layout introduces the dead key as a necessary evil, but only on the 3rd layer. This design choice ensures that typing in English, Spanish, or German remains unaffected, while other languages like French and Italian would involve using dead keys.
 
 ## Features
 
@@ -29,7 +31,7 @@ This layout is a modification of the "English (intl., with AltGr dead keys)" key
 
 This is a seven-level keyboard, meaning that each key on the keyboard can produce up to seven symbols.
 
-These symbols are organized into four columns, in this chart:
+These symbols are organized into four columns in this chart:
 
 ![The layout of a seven level keyboard](layout.png)
 
@@ -67,6 +69,18 @@ This table only covers the usage of additions to The "English (intl., with AltGr
 | Registered Trademark (®) and Trademark (™) | <kbd>AltGr</kbd> + <kbd>v</kbd>, <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>v</kbd>                |  Enron®'s NewProduct™              |
 
 † **Note Symbols**: The first four traditional order of [note symbols](https://en.wikipedia.org/wiki/Note_(typography)) in English have been added. The traditional order of these symbols in English is [*](https://en.wikipedia.org/wiki/Asterisk), [†](https://en.wikipedia.org/wiki/Dagger_(typography)), [‡](https://en.wikipedia.org/wiki/Double_dagger_(typography)), [§](https://en.wikipedia.org/wiki/Section_sign), [‖](https://en.wikipedia.org/wiki/Vertical_Bar), [¶](https://en.wikipedia.org/wiki/Pilcrow). The first exists on standard keyboards, the section sign § and the pilcrow sign ¶ existed in "English (intl., with AltGr dead keys)", this project piles the rest three symbols on the backslash key.
+
+## Implementation
+
+In this repository, we provide implementations of the MathLingua-Layout for Linux and *nix systems using the XKB system.
+
+The layout is based on a modification of the "English (intl., with AltGr dead keys)" keyboard layout, originally developed by Microsoft[^microsoft]. It's optimized for typing mathematical symbols and expressions without compromising the original layout's multi-lingual capabilities.
+
+The implementation is designed as a diff file against the /usr/share/X11/xkb/symbols/us file that comes with Ubuntu, replacing the "English (intl., with AltGr dead keys)" layout directly. The repository is updated with every Ubuntu LTS release.
+
+To use the MathLingua-Layout on your Linux/*nix system, follow the installation instructions provided in the repository.
+
+[^microsoft]: The "English (intl., with AltGr dead keys)" layout, originally developed by Microsoft, enables typing in virtually any Latin-based script. It is optimised explicitly for Spanish and French, designed to minimize the use of dead keys. Only a few words, such as "bilingüe" (bilingual in Spanish), require the use of dead keys. 
 
 ## Installation
 
