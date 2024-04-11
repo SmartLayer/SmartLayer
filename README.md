@@ -1,4 +1,7 @@
-# MathLingua-Layout: An XKB Keyboard Layout for Math-Symbol Typing Polyglots
+<div style="border: 2px solid #0000FF; padding: 20px; margin-bottom: 20px;"> <p align="center"> If you are looking for SmartLayer blockchain technology, they are under <a href="https://github.com/SmartTokenLabs">Smart Token Labs</a>. </p> </div>
+---
+
+# SmartLayer: A 7-Laywered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
 
 Welcome to the MathLingua-Layout repository. This project is dedicated to providing a unique keyboard layout tailored for Linux (and *nix) users, specifically for the XKB system. Our layout is designed to bridge the gap between mathematical typing, multi-lingual capabilities, and the familiarity of the standard US keyboard layout.
 
