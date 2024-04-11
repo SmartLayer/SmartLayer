@@ -1,11 +1,10 @@
-|   |   |   |
-|---|---|---|
-|   | **For the SmartLayer blockchain technology, visit [Smart Token Labs](https://github.com/SmartTokenLabs)** |   |
-|   |   |   |
+| | | |
+|:---:|:---:|:---:|
+| | **For the SmartLayer blockchain technology, visit [Smart Token Labs](https://github.com/SmartTokenLabs)** | |
 
 ---
 
-# SmartLayer: A 7-Laywered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
+# SmartLayer: A 7-Layered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
 
 Welcome to the SmartLayer repository. This project is dedicated to providing a unique keyboard layout that seamlessly combines multi-lingual typing, efficient math symbol input, and the familiarity of the standard US keyboard layout. SmartLayer is designed to enhance productivity for users who frequently type in multiple languages and require quick access to a wide range of mathematical symbols, all while maintaining a minimal learning curve.
 
