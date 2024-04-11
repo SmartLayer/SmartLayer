@@ -1,9 +1,13 @@
-<div style="border: 2px solid #0000FF; padding: 20px; margin-bottom: 20px;"> <p align="center"> If you are looking for SmartLayer blockchain technology, they are under <a href="https://github.com/SmartTokenLabs">Smart Token Labs</a>. </p> </div>
+|   |   |   |
+|---|---|---|
+|   | **For the SmartLayer blockchain technology, visit [Smart Token Labs](https://github.com/SmartTokenLabs)** |   |
+|   |   |   |
+
 ---
 
 # SmartLayer: A 7-Laywered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
 
-Welcome to the MathLingua-Layout repository. This project is dedicated to providing a unique keyboard layout tailored for Linux (and *nix) users, specifically for the XKB system. Our layout is designed to bridge the gap between mathematical typing, multi-lingual capabilities, and the familiarity of the standard US keyboard layout.
+Welcome to the SmartLayer repository. This project is dedicated to providing a unique keyboard layout that seamlessly combines multi-lingual typing, efficient math symbol input, and the familiarity of the standard US keyboard layout. SmartLayer is designed to enhance productivity for users who frequently type in multiple languages and require quick access to a wide range of mathematical symbols, all while maintaining a minimal learning curve.
 
 ## The Problem
 
@@ -15,7 +19,7 @@ At its core, this layout retains the intuitive design of the US keyboard, ensuri
 
 ## Introduction
 
-The MathLingua-Layout is a unique keyboard layout designed to bridge the gap between mathematical typing, multi-lingual capabilities, and familiarity with the standard US keyboard layout.
+The SmartLayer is a unique keyboard layout designed to bridge the gap between mathematical typing, multi-lingual capabilities, and familiarity with the standard US keyboard layout.
 
 At its core, this layout retains the intuitive design of the US keyboard, ensuring that users don't have to unlearn anything. Every symbol and letter functions exactly like the US keyboard. However, it goes beyond by offering up to seven levels of symbols for most keys, allowing for a vast array of symbols and characters. This is a significant enhancement over most layouts, which typically offer a maximum of four levels.
 
@@ -75,13 +79,13 @@ This table only covers the usage of additions to The "English (intl., with AltGr
 
 ## Implementation
 
-In this repository, we provide implementations of the MathLingua-Layout for Linux and *nix systems using the XKB system.
+In this repository, we provide implementations of the SmartLayer for Linux and *nix systems using the XKB system.
 
 The layout is based on a modification of the "English (intl., with AltGr dead keys)" keyboard layout, originally developed by Microsoft[^microsoft]. It's optimized for typing mathematical symbols and expressions without compromising the original layout's multi-lingual capabilities.
 
 The implementation is designed as a diff file against the /usr/share/X11/xkb/symbols/us file that comes with Ubuntu, replacing the "English (intl., with AltGr dead keys)" layout directly. The repository is updated with every Ubuntu LTS release.
 
-To use the MathLingua-Layout on your Linux/*nix system, follow the installation instructions provided in the repository.
+To use the SmartLayer on your Linux/*nix system, follow the installation instructions provided in the repository.
 
 [^microsoft]: The "English (intl., with AltGr dead keys)" layout, originally developed by Microsoft, enables typing in virtually any Latin-based script. It is optimised explicitly for Spanish and French, designed to minimize the use of dead keys. Only a few words, such as "bilingüe" (bilingual in Spanish), require the use of dead keys. 
 
@@ -97,11 +101,11 @@ This layout supersedes the original "English (intl., with AltGr dead keys)". Whi
 This is done by first going into the directory, then run patch with the input being the diff file corrisponding to your Linux distribution, or the version most near to it. Try a dry run first:
 
     $ cd /usr/share/X11/xkb/symbols
-    $ sudo patch --dry-run --force < ~/code/MathLingua-Layout/ubuntu-23.04.diff
+    $ sudo patch --dry-run --force < ~/code/SmartLayer/ubuntu-23.04.diff
 
 After the dry run, if it shows no errors, do a real run:
 
-    $ sudo patch --force < ~/code/MathLingua-Layout/ubuntu-23.04.diff
+    $ sudo patch --force < ~/code/SmartLayer/ubuntu-23.04.diff
 
 Once this is done, don't forget to go to Gnome Settings, choose Keyboard and choose "English (intl., with AltGr dead keys)".
 
@@ -111,7 +115,7 @@ There are [additional instructions](SMALL-KEYBOARDS.md) if you need a special co
 
 While the layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
 
-- **Superscript Minus**: Currently, there is no superscript minus symbol because muscular and feminine cardinal is where you would expect superscript minus. This is rarely an issue as superscripts are often used for elliptic curve math, which primarily involves addition.
+- **Superscript Minus**: Currently, there is no superscript minus symbol because muscular and feminine cardinal is where you would expect superscript minus. This is rarely an issue as superscripts are often used for elliptic curve math, primarily involving addition.
 - **Unused Alt Key Combinations**: The combinations `alt+g`, `alt+shift+g` and `alt+m` and `alt+shift+m` currently do not produce any special symbols.
 - **Insufficient Greek letters**. One suggestion was that there should be enough Greek letters to denote the SARS-CoV-2 variants, but there were just too many.
 
@@ -124,6 +128,7 @@ These issues will be considered for future updates and improvements.
 - Usually, capital N followed by muscular cardinal º, when typed together like this Nº, suffices as a substitute for Numero sign №. We kept both anyway.
 - The Latin Alpha (ɑ) and Copyright (©) symbols have little real-life uses. Pity.
 
+
 ## Helpful Knowledge
 
 To get the Unicode point of a character, use this command:
@@ -134,4 +139,4 @@ U+0000
 U+07A5
 U+0001
 ````
-This shows that 𐞥 is U107A5. You can use this trick to get the unicode codepoint for everything mentioned in this document.
+This shows that 𐞥 is U107A5. You can use this trick to get the Unicode codepoint for everything mentioned in this document.
