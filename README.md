@@ -6,6 +6,8 @@ The following is a keyboard project unrelated to the blockchain technology.
 
 ## SmartLayer: A 7-Layered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
 
+![The layout of a seven level keyboard](layout.png)
+
 Welcome to the SmartLayer repository. This project is dedicated to providing a unique keyboard layout that seamlessly combines multi-lingual typing, efficient math symbol input, and the familiarity of the standard US keyboard layout. SmartLayer is designed to enhance productivity for users who frequently type in multiple languages and require quick access to a wide range of mathematical symbols, all while maintaining a minimal learning curve.
 
 ### The Problem
@@ -38,8 +40,6 @@ The layout introduces the dead key as a necessary evil, but only on the 3rd laye
 This is a seven-level keyboard, meaning that each key on the keyboard can produce up to seven symbols.
 
 These symbols are organized into four columns in this chart:
-
-![The layout of a seven level keyboard](layout.png)
 
 | Level | Modifier Combination      | Symbols Produced    | With the example of letter A |
 | ----- | ------------------------- | ------------------- | ------------------- |
