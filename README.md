@@ -114,7 +114,7 @@ There are [additional instructions](SMALL-KEYBOARDS.md) if you need a special co
 
 While the layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
 
-- **Superscript Minus**: Currently, there is no superscript minus symbol because muscular and feminine cardinal is where you would expect superscript minus. This is rarely an issue as superscripts are often used for elliptic curve math, primarily involving addition.
+- **Missing Superscript Minus**: Currently, there is no superscript minus symbol because the muscular and feminine cardinal took the place where you would expect superscript minus. I am guilty of not using the symbol, as I use superscripts for elliptic curve math, primarily involving addition. Still, a solution is needed.
 - **Unused Alt Key Combinations**: The combinations `alt+g`, `alt+shift+g` and `alt+m` and `alt+shift+m` currently do not produce any special symbols.
 - **Insufficient Greek letters**. One suggestion was that there should be enough Greek letters to denote the SARS-CoV-2 variants, but there were just too many.
 
