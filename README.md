@@ -130,7 +130,7 @@ These issues will be considered for future updates and improvements.
 
 ### Helpful Knowledge
 
-To get the Unicode point of a character, use this command:
+If you want to play around getting new symbols to a keyboard layout, you must first find its code point. To get the Unicode point of a character, use this command in a *nix PC - note the symbol is passed to the echo command:
 ````
 echo -n "𐞥" | iconv -f utf8 -t UTF-32 | hexdump -e '/2 "U+%04X\n"'
 U+FEFF
@@ -138,4 +138,4 @@ U+0000
 U+07A5
 U+0001
 ````
-This shows that 𐞥 is U107A5. You can use this trick to get the Unicode codepoint for everything mentioned in this document.
+The example shows that 𐞥 is U107A5. You can use this trick to get the Unicode codepoint for everything mentioned in this document.
