@@ -1,8 +1,10 @@
 # For the SmartLayer blockchain technology, visit [Smart Token Labs](https://github.com/SmartTokenLabs)
 
+![Smart Layer Blockchain Technology](img/blockchain_smart_layer.jpg)
+
 ---
 
-The following is a keyboard project unrelated to the blockchain technology.
+This project is a keyboard project unrelated to the blockchain technology.
 
 ## SmartLayer: A 7-Layered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
 
