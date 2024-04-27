@@ -93,20 +93,20 @@ To use the SmartLayer on your Linux/*nix system, follow the installation instruc
 ### Installation
 
 For Ubuntu 23.04:
-1. Replace `/usr/share/X11/xkb/symbols/us` with `ubuntu-23.04.us`.
+1. Replace `/usr/share/X11/xkb/symbols/us` with `layout/ubuntu-23.04.us`.
 2. In X11, select the "English (intl., with AltGr dead keys)" layout.
 3. For Wayland users, configure the layout within your Wayland compositor settings.
 
-This layout supersedes the original "English (intl., with AltGr dead keys)". While a dedicated OS package would be ideal, none currently exists. For other Linux versions or X11, apply `ubuntu-23.04.diff` to `/usr/share/X11/xkb/symbols/us` using the patch command.
+This layout supersedes the original "English (intl., with AltGr dead keys)". While a dedicated OS package would be ideal, none currently exists. For other Linux versions or X11, apply `layout/ubuntu-23.04.diff` to `/usr/share/X11/xkb/symbols/us` using the patch command.
 
 This is done by first going into the directory, then run patch with the input being the diff file corrisponding to your Linux distribution, or the version most near to it. Try a dry run first:
 
     $ cd /usr/share/X11/xkb/symbols
-    $ sudo patch --dry-run --force < ~/code/SmartLayer/ubuntu-23.04.diff
+    $ sudo patch --dry-run --force < ~/code/SmartLayer/layout/ubuntu-23.04.diff
 
 After the dry run, if it shows no errors, do a real run:
 
-    $ sudo patch --force < ~/code/SmartLayer/ubuntu-23.04.diff
+    $ sudo patch --force < ~/code/SmartLayer/layout/ubuntu-23.04.diff
 
 Once this is done, don't forget to go to Gnome Settings, choose Keyboard and choose "English (intl., with AltGr dead keys)".
 
